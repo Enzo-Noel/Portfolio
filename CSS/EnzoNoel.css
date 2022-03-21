@@ -14,7 +14,7 @@
 
 .actif .PColor {
   animation: color-transition 7s linear infinite alternate,
-    translationXplus var(--timing-transition) 150ms 1 normal backwards;
+    translationXplus var(--timing-transition) /*150ms*/ 1 normal backwards;
 }
 
 .actif #presentation {
@@ -25,5 +25,5 @@
 
 .actif #presentation p {
   animation: color-transition 7s linear infinite alternate,
-    translationXminus var(--timing-transition) 150ms 1 normal backwards;
+    translationXminus var(--timing-transition) /*150ms*/ 1 normal backwards;
 }
