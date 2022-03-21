@@ -1,0 +1,29 @@
+/* portfolio */
+
+.actif #EnzoNoel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.actif #name {
+  font-size: 8rem;
+  line-height: 1;
+  animation: translationXplus var(--timing-transition) 1 normal;
+}
+
+.actif .PColor {
+  animation: color-transition 7s linear infinite alternate,
+    translationXplus var(--timing-transition) 150ms 1 normal backwards;
+}
+
+.actif #presentation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.actif #presentation p {
+  animation: color-transition 7s linear infinite alternate,
+    translationXminus var(--timing-transition) 150ms 1 normal backwards;
+}
