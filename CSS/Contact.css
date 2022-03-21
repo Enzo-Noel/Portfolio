@@ -1,0 +1,37 @@
+/* contact */
+
+.actif #menuContact {
+  display: flex;
+}
+
+.actif ul#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actif .email {
+  animation: translationYplus var(--timing-transition) 1 normal;
+}
+
+.actif #mail.defaultMail {
+  animation: opacityDefaultMail 0.5s 1 normal;
+}
+
+.actif #mail.changeMail {
+  animation: opacityChangeMail 0.5s 1 normal;
+  color: rgb(230, 230, 230);
+}
+
+.actif .github {
+  animation: opacity var(--timing-transition) 1 normal;
+}
+
+.actif .linkedin {
+  animation: translationYminus var(--timing-transition) 1 normal;
+}
+
+.actif .icon {
+  height: 1.3rem;
+  width: auto;
+}

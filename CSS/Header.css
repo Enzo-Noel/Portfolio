@@ -1,0 +1,47 @@
+/* Head */
+
+header {
+  width: 100%;
+  padding: 2rem 0rem 0rem;
+}
+
+header nav.menu {
+  display: flex;
+  width: 100% content-box;
+  animation: translationYplus var(--timing-transition) linear 1 normal;
+}
+
+header nav.menu ul {
+  display: flex;
+}
+
+.menu {
+  min-width: 100px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.projet {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+}
+
+.projet a:hover {
+  opacity: 0.6;
+}
+
+.projet a {
+  animation: color-transition 7s linear infinite alternate;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 100px;
+}
