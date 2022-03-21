@@ -34,19 +34,13 @@ function displayContact() {
 }
 
 if (window.location.href.indexOf("Presentation") > -1) {
-  Contact.classList.remove("actif");
-  Projects.classList.remove("actif");
-  Presentation.classList.add("actif");
+  displayPresentation();
 }
 
 if (window.location.href.indexOf("Projects") > -1) {
-  Contact.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Projects.classList.add("actif");
+  displayProjects();
 }
 
 if (window.location.href.indexOf("Contact") > -1) {
-  Projects.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Contact.classList.add("actif");
+  displayContact();
 }
