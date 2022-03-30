@@ -5,6 +5,15 @@ header {
   padding: 2rem 0rem 0rem;
 }
 
+@media screen and (max-width: 1000px) {
+  header nav.menu {
+    display: flex;
+    flex-direction: column;
+    width: 100% content-box;
+    animation: translationYplus var(--timing-transition) linear 1 normal;
+  }
+}
+
 header nav.menu {
   display: flex;
   width: 100% content-box;

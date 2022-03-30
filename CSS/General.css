@@ -67,3 +67,17 @@ main .contenu.actif {
   width: 100%;
   height: 52rem;
 }
+
+@media screen and (max-width: 1000px) {
+  body {
+    overflow: scroll;
+  }
+  main .contenu.actif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 52rem;
+  }
+}

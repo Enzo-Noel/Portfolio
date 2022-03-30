@@ -54,3 +54,17 @@
 .actif .projects h1 {
   padding: 1rem;
 }
+
+@media screen and (max-width: 1000px) {
+  .actif .top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    justify-content: space-between;
+  }
+  .actif .bot {
+    display: flex;
+    flex-direction: column;
+  }
+}

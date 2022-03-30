@@ -27,3 +27,19 @@
   animation: color-transition 7s linear infinite alternate,
     translationXminus var(--timing-transition) /*150ms*/ 1 normal backwards;
 }
+
+@media screen and (max-width: 1000px) {
+  .actif #EnzoNoel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .actif #presentation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
