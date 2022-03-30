@@ -14,13 +14,13 @@
   <body>
     <header>
       <nav class="menu list">
-        <div class="name">
+        <div id="nameH" class="actifH">
           <a onclick="displayPresentation()" href="#Presentation">Noël Enzo</a>
         </div>
-        <div class="projet">
+        <div id="projectH">
           <a onclick="displayProjects()" href="#Projects">Projects</a>
         </div>
-        <div class="contact">
+        <div id="contactH">
           <a onclick="displayContact()" href="#Contact">Contact</a>
         </div>
       </nav>
@@ -50,11 +50,22 @@
       <div class="contenu" id="Projects">
         <div class="projects">
           <div class="top">
-            <div id="Lowatem"><h1>Lowatem</h1></div>
-            <div id="Graph"><h1>Graph</h1></div>
+            <div id="Lowatem">
+              <h1>Lowatem</h1>
+              <a onclick="displayLowatem()" href="#Lowatem">
+                <img src="Ressources/lowatem-gui.png" alt="Lowatem"
+              /></a>
+            </div>
+            <div id="Graphes">
+              <h1>Graphes</h1>
+              <a onclick="displayGraphes()" href="#Graphes"></a>
+            </div>
           </div>
           <div class="bot">
-            <div id="Pong"><h1>Pong</h1></div>
+            <div id="Pong">
+              <h1>Pong</h1>
+              <a onclick="displayPong()" href="#Pong"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -92,6 +103,7 @@
           </ul>
         </div>
       </div>
+      <div class="contenu" id="Lowatem"></div>
     </main>
   </body>
 </html>

@@ -16,14 +16,20 @@
 
 .actif #Lowatem {
   flex: 1;
-  display: inherit;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: translationXplus var(--timing-transition) 1 normal;
 }
 
-.actif #Graph {
+.actif #Lowatem img {
+  object-fit: fill;
+  width: 36rem;
+}
+
+.actif #Graphes {
   flex: 1;
-  display: inherit;
+  display: flex;
   justify-content: center;
   animation: translationXminus var(--timing-transition) 1 normal;
 }

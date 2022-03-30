@@ -19,27 +19,35 @@ header nav.menu ul {
   min-width: 100px;
 }
 
-.name {
+#nameH {
   display: flex;
   justify-content: center;
   flex: 1;
 }
 
-.projet {
+#projectH {
   display: flex;
   justify-content: center;
   flex: 3;
 }
 
-.projet a:hover {
+#projectH a:hover {
   opacity: 0.6;
 }
 
-.projet a {
+#nameH.actifH a {
   animation: color-transition 7s linear infinite alternate;
 }
 
-.contact {
+#projectH.actifH a {
+  animation: color-transition 7s linear infinite alternate;
+}
+
+#contactH.actifH a {
+  animation: color-transition 7s linear infinite alternate;
+}
+
+#contactH {
   display: flex;
   justify-content: center;
   flex: 1;
