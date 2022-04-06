@@ -1,17 +1,9 @@
 /* contact */
 
-.actif #menuContact {
-  display: flex;
-}
-
 .actif ul#contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.actif .email {
-  animation: translationYplus var(--timing-transition) 1 normal;
 }
 
 .actif #mail.defaultMail {
@@ -20,7 +12,10 @@
 
 .actif #mail.changeMail {
   animation: opacityChangeMail 0.5s 1 normal;
-  color: rgb(230, 230, 230);
+}
+
+.actif .email {
+  animation: translationYplus var(--timing-transition) 1 normal;
 }
 
 .actif .github {
@@ -31,10 +26,5 @@
   animation: translationYminus var(--timing-transition) 1 normal;
 }
 
-.actif .icon {
-  height: 1.3rem;
-  width: auto;
-}
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
 }

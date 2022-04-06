@@ -14,25 +14,26 @@
   <body>
     <header>
       <nav class="menu list">
-        <div id="nameH" class="actifH">
-          <a onclick="displayPresentation()" href="#Presentation">Noël Enzo</a>
+        <div id="nameH" class="sousMenu actifH">
+          <a onclick="displayPresentation()" href="#Presentation">Enzo NOËL</a>
         </div>
-        <div id="projectH">
+        <div id="projectH" class="sousMenu">
           <a onclick="displayProjects()" href="#Projects">Projects</a>
         </div>
-        <div id="contactH">
+        <div id="contactH" class="sousMenu">
           <a onclick="displayContact()" href="#Contact">Contact</a>
         </div>
       </nav>
     </header>
     <main id="portfolio">
+      <!-- Presentation -->
       <div class="contenu actif" id="Presentation">
         <article id="EnzoNoel">
           <div class="translation">
             <h1 id="name">
-              NOËL
-              <br />
               ENZO
+              <br />
+              NOËL
             </h1>
             <p class="PColor">
               French student
@@ -43,36 +44,77 @@
         </article>
         <aside id="presentation">
           <div>
-            <p>Html, CSS, Java, C#</p>
+            <ul class="list language">
+              <li>
+                <ul class="list">
+                  <li>
+                    <img
+                      class="icon"
+                      src="Ressources/html-5.png"
+                      alt="html 5"
+                    />
+                  </li>
+                  <li><p>Html</p></li>
+                </ul>
+              </li>
+              <li>
+                <ul class="list">
+                  <li>
+                    <img class="icon" src="Ressources/css-3.png" alt="css 3" />
+                  </li>
+                  <li><p>CSS</p></li>
+                </ul>
+              </li>
+              <li>
+                <ul class="list">
+                  <li>
+                    <img class="icon" src="Ressources/java.png" alt="Java" />
+                  </li>
+                  <li><p>Java</p></li>
+                </ul>
+              </li>
+              <li>
+                <ul class="list">
+                  <li>
+                    <img
+                      class="icon"
+                      src="Ressources/c-sharp.png"
+                      alt="C-sharp"
+                    />
+                  </li>
+                  <li><p>C#</p></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </aside>
       </div>
+      <!-- Projects -->
       <div class="contenu" id="Projects">
         <div class="projects">
           <div class="top">
             <div id="Lowatem">
-              <a onclick="displayLowatem()" href="#Lowatem">
-                <img src="Ressources/lowatem-gui.png" alt="Lowatem" />
+              <a onclick="displayLowatem()" href="#Lowatem"
+                ><img src="Ressources/lowatem-gui.png" alt="Lowatem" />
                 <h1>Lowatem</h1></a
               >
             </div>
             <div id="Graphes">
-              <h1>Graphes</h1>
-              <a onclick="displayGraphes()" href="#Graphes"></a>
+              <a onclick="displayGraphes()" href="#Graphes"><h1>Graphes</h1></a>
             </div>
           </div>
           <div class="bot">
             <div id="Pong">
-              <h1>Pong</h1>
-              <a onclick="displayPong()" href="#Pong"></a>
+              <a onclick="displayPong()" href="#Pong"><h1>Pong</h1></a>
             </div>
           </div>
         </div>
       </div>
+      <!-- Contact -->
       <div class="contenu" id="Contact">
         <div id="menuContact">
           <ul id="contact" class="list">
-            <img class="icon email" src="Ressources/mail.png" alt="mailIcon" />
+            <img class="icon email" src="Ressources/gmail.png" alt="mailIcon" />
             <li class="email">
               <a
                 id="mail"
@@ -103,7 +145,10 @@
           </ul>
         </div>
       </div>
+      <!-- SubProjects -->
       <div class="contenu" id="Lowatem"></div>
+      <div class="contenu" id="Graphes"></div>
+      <div class="contenu" id="Pong"></div>
     </main>
   </body>
 </html>

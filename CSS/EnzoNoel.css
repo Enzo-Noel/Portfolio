@@ -22,13 +22,28 @@
   display: flex;
   justify-content: center;
 }
-
-.actif #presentation p {
-  animation: color-transition 7s linear infinite alternate,
-    translationXminus var(--timing-transition) /*150ms*/ 1 normal backwards;
+.actif #presentation .language {
+  animation: translationXminus var(--timing-transition) /*150ms*/ 1 normal
+    backwards;
 }
 
-@media screen and (max-width: 1000px) {
+.actif #presentation ul.language ul.list p {
+  animation: color-transition 7s linear infinite alternate;
+}
+
+.actif #presentation ul.language {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actif #presentation ul.language ul.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+}
+
+@media screen and (max-width: 600px) {
   .actif #EnzoNoel {
     flex: 1;
     display: flex;

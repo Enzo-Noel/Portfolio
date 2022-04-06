@@ -1,4 +1,9 @@
 /* Projects */
+main .contenu.actif#Projects {
+  align-items: flex-start;
+  padding-top: 3.6%;
+}
+
 .actif .projects {
   display: flex;
   align-items: center;
@@ -29,10 +34,13 @@
   object-fit: fill;
   width: 36rem;
 }
+
+.actif #Lowatem img:hover {
+  opacity: 1;
+}
+
 .actif #Lowatem a img:hover + h1,
 .actif #Lowatem a h1:hover {
-  opacity: 0.5;
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -55,7 +63,7 @@
   padding: 1rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   .actif .top {
     flex: 1;
     display: flex;
