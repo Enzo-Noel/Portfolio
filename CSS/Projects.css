@@ -1,7 +1,7 @@
 /* Projects */
 main .contenu.actif#Projects {
-  align-items: flex-start;
-  padding-top: 3.6%;
+  /* align-items: flex-start;
+  padding-top: 3.6%; */
 }
 
 .actif .projects {
@@ -63,16 +63,9 @@ main .contenu.actif#Projects {
   padding: 1rem;
 }
 
-@media screen and (max-width: 600px) {
-  .actif .top {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: inherit;
-    justify-content: space-between;
-  }
+@media screen and (max-width: 900px) {
+  .actif .top,
   .actif .bot {
-    display: flex;
     flex-direction: column;
   }
 }

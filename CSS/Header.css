@@ -2,42 +2,38 @@
 
 header {
   width: 100%;
-  padding-top: 2rem;
-  position: absolute;
+  padding: 0;
   margin: 0;
-}
-
-@media screen and (max-width: 600px) {
-  header nav.menu {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100% content-box;
-    animation: translationYplus var(--timing-transition) linear 1 normal;
-  }
+  background-color: rgb(44, 99, 99);
+  min-height: 8vh;
+  display: flex;
 }
 
 header nav.menu {
-  margin: 0;
   padding: 0;
+  margin: 0;
   display: flex;
-  width: 100% content-box;
+  width: 100%;
   animation: translationYplus var(--timing-transition) linear 1 normal;
+  justify-content: space-around;
+  align-items: end;
 }
 
 header nav.menu ul {
   display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 .menu {
-  min-width: 100px;
+  padding: 0;
+  margin: 0;
 }
 
 .sousMenu {
   display: flex;
   justify-content: center;
-  flex: 1;
+  min-width: 12rem;
 }
 
 #nameH.actifH a {
@@ -50,4 +46,15 @@ header nav.menu ul {
 
 #contactH.actifH a {
   animation: color-transition 7s linear infinite alternate;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    min-height: 15vh;
+  }
+  header nav.menu {
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+  }
 }

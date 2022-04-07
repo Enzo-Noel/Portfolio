@@ -40,21 +40,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
-@media screen and (max-width: 600px) {
-  .actif #EnzoNoel {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+@media screen and (max-width: 900px) {
+  .actif #EnzoNoel,
   .actif #presentation {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     align-items: center;
   }
 }
