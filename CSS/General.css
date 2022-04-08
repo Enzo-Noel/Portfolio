@@ -61,6 +61,12 @@ ul.list {
 
 /* Main */
 
+main .anchor {
+  position: absolute;
+  display: none;
+  top: 0;
+}
+
 main .contenu {
   display: none;
   padding: 0;

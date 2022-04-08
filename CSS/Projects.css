@@ -1,7 +1,6 @@
 /* Projects */
 main .contenu.actif#Projects {
-  /* align-items: flex-start;
-  padding-top: 3.6%; */
+  align-items: flex-start;
 }
 
 .actif .projects {

@@ -8,6 +8,9 @@ var Pong = document.getElementById("Pong");
 var NameHeader = document.getElementById("nameH");
 var ProjectsHeader = document.getElementById("projectH");
 var Contactheader = document.getElementById("contactH");
+var Body = document.getElementById("body");
+
+// Body.scrollTop = 0;
 
 function defaultText() {
   mail.textContent = "Email";
@@ -43,6 +46,7 @@ function displayProjects() {
   NameHeader.classList.remove("actifH");
   ProjectsHeader.classList.add("actifH");
   Projects.classList.add("actif");
+  Body.scrollTop = 0;
 }
 
 function displayContact() {

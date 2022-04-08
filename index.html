@@ -12,22 +12,25 @@
     <script src="js/script.js" defer></script>
     <title>Enzo NOËl - Portfolio</title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <nav class="menu list">
         <div id="nameH" class="sousMenu actifH">
-          <a onclick="displayPresentation()" href="#Presentation">Enzo NOËL</a>
+          <a onclick="displayPresentation()" href="#anchorPresentation"
+            >Enzo NOËL</a
+          >
         </div>
         <div id="projectH" class="sousMenu">
-          <a onclick="displayProjects()" href="#Projects">Projects</a>
+          <a onclick="displayProjects()" href="#anchorProjects">Projects</a>
         </div>
         <div id="contactH" class="sousMenu">
-          <a onclick="displayContact()" href="#Contact">Contact</a>
+          <a onclick="displayContact()" href="#anchorContact">Contact</a>
         </div>
       </nav>
     </header>
     <main id="portfolio">
       <!-- Presentation -->
+      <div class="anchor" id="anchorPresentation"></div>
       <div class="contenu actif" id="Presentation">
         <article id="EnzoNoel">
           <div class="translation">
@@ -91,6 +94,7 @@
         </aside>
       </div>
       <!-- Projects -->
+      <div class="anchor" id="anchorProjects"></div>
       <div class="contenu" id="Projects">
         <div class="projects">
           <div class="top">
@@ -112,6 +116,7 @@
         </div>
       </div>
       <!-- Contact -->
+      <div class="anchor" id="anchorContact"></div>
       <div class="contenu" id="Contact">
         <div id="menuContact">
           <ul id="contact" class="list">

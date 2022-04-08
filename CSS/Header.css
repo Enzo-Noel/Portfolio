@@ -4,7 +4,6 @@ header {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: rgb(44, 99, 99);
   min-height: 8vh;
   display: flex;
 }
