@@ -53,6 +53,11 @@ header nav.menu ul {
   }
   header nav.menu {
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header nav.menu {
     flex-direction: column;
     justify-content: end;
   }

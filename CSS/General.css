@@ -11,6 +11,7 @@
     :pink   "#fc618d" */
 
 /* Background */
+
 html {
   font-size: 16px;
 }
@@ -89,6 +90,9 @@ main .contenu.actif {
 }
 
 @media screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
   body {
     overflow: hidden;
     display: flex;
@@ -97,5 +101,11 @@ main .contenu.actif {
   main .contenu.actif {
     flex-direction: column;
     min-height: 85vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 10px;
   }
 }

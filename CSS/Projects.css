@@ -63,8 +63,20 @@ main .contenu.actif#Projects {
 }
 
 @media screen and (max-width: 900px) {
+  main .contenu.actif#Projects {
+    justify-content: flex-start;
+  }
   .actif .top,
   .actif .bot {
     flex-direction: column;
+  }
+  .actif img.imgProject {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .actif img.imgProject {
+    width: 24rem;
   }
 }
