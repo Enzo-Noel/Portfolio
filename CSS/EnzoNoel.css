@@ -14,7 +14,7 @@
 
 .actif .PColor {
   animation: color-transition 7s linear infinite alternate,
-    translationXplus var(--timing-transition) /*150ms*/ 1 normal backwards;
+    translationXplus var(--timing-transition) 1 normal backwards;
 }
 
 .actif #presentation {
@@ -23,8 +23,7 @@
   justify-content: center;
 }
 .actif #presentation .language {
-  animation: translationXminus var(--timing-transition) /*150ms*/ 1 normal
-    backwards;
+  animation: translationXminus var(--timing-transition) 1 normal backwards;
 }
 
 .actif #presentation ul.language ul.list p {

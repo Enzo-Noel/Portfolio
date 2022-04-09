@@ -16,15 +16,15 @@
     <header>
       <nav class="menu list">
         <div id="nameH" class="sousMenu actifH">
-          <a onclick="displayPresentation()" href="#anchorPresentation"
+          <a onclick="display(Presentation)" href="#anchorPresentation"
             >Enzo NOËL</a
           >
         </div>
         <div id="projectH" class="sousMenu">
-          <a onclick="displayProjects()" href="#anchorProjects">Projects</a>
+          <a onclick="display(Projects)" href="#anchorProjects">Projects</a>
         </div>
         <div id="contactH" class="sousMenu">
-          <a onclick="displayContact()" href="#anchorContact">Contact</a>
+          <a onclick="display(Contact)" href="#anchorContact">Contact</a>
         </div>
       </nav>
     </header>
@@ -48,6 +48,7 @@
         </article>
         <aside id="presentation">
           <div>
+            <div><p>blabla</p></div>
             <ul class="list language">
               <li>
                 <ul class="list">
@@ -99,7 +100,7 @@
         <div class="projects">
           <div class="top">
             <div id="Lowatem">
-              <a onclick="displayLowatem()" href="#Lowatem"
+              <a onclick="display(Lowatem)" href="#Lowatem"
                 ><img
                   class="imgProject"
                   src="Ressources/lowatem-gui.png"
@@ -109,12 +110,12 @@
               >
             </div>
             <div id="Graphes">
-              <a onclick="displayGraphes()" href="#Graphes"><h1>Graphes</h1></a>
+              <a onclick="display(Graphes)" href="#Graphes"><h1>Graphes</h1></a>
             </div>
           </div>
           <div class="bot">
             <div id="Pong">
-              <a onclick="displayPong()" href="#Pong"><h1>Pong</h1></a>
+              <a onclick="display(Pong)" href="#Pong"><h1>Pong</h1></a>
             </div>
           </div>
         </div>
@@ -156,9 +157,9 @@
         </div>
       </div>
       <!-- SubProjects -->
-      <div class="contenu" id="Lowatem"></div>
-      <div class="contenu" id="Graphes"></div>
-      <div class="contenu" id="Pong"></div>
+      <div class="contenu subProjects" id="Lowatem"></div>
+      <div class="contenu subProjects" id="Graphes"></div>
+      <div class="contenu subProjects" id="Pong"></div>
     </main>
   </body>
 </html>

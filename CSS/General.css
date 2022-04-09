@@ -44,7 +44,6 @@ li {
   font-size: 2rem;
   padding: 0;
   margin: 0;
-  text-shadow: 0 10px 30px rgb(2 11 22 / 50%);
   cursor: default;
 }
 
@@ -106,6 +105,6 @@ main .contenu.actif {
 
 @media screen and (max-width: 500px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
   }
 }

@@ -8,9 +8,23 @@ var Pong = document.getElementById("Pong");
 var NameHeader = document.getElementById("nameH");
 var ProjectsHeader = document.getElementById("projectH");
 var Contactheader = document.getElementById("contactH");
-var Body = document.getElementById("body");
 
-// Body.scrollTop = 0;
+var allVar = [];
+allVar.push(
+  mail,
+  Presentation,
+  Projects,
+  Contact,
+  Lowatem,
+  Graphes,
+  Pong,
+  NameHeader,
+  ProjectsHeader,
+  Contactheader
+);
+
+var allSubProjects = [];
+allSubProjects.push(Lowatem, Graphes, Pong);
 
 function defaultText() {
   mail.textContent = "Email";
@@ -24,90 +38,56 @@ function changeText() {
   mail.classList.add("changeMail");
 }
 
-function displayPresentation() {
-  Contact.classList.remove("actif");
-  Projects.classList.remove("actif");
-  Lowatem.classList.remove("actif");
-  Graphes.classList.remove("actif");
-  Pong.classList.remove("actif");
-  ProjectsHeader.classList.remove("actifH");
-  Contactheader.classList.remove("actifH");
-  NameHeader.classList.add("actifH");
-  Presentation.classList.add("actif");
+function removeActifAll() {
+  allVar.forEach((element) => {
+    if (element.classList.contains("actif")) {
+      element.classList.remove("actif");
+    }
+    if (element.classList.contains("actifH")) {
+      element.classList.remove("actifH");
+    }
+  });
 }
 
-function displayProjects() {
-  Contact.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Lowatem.classList.remove("actif");
-  Graphes.classList.remove("actif");
-  Pong.classList.remove("actif");
-  Contactheader.classList.remove("actifH");
-  NameHeader.classList.remove("actifH");
-  ProjectsHeader.classList.add("actifH");
-  Projects.classList.add("actif");
-  Body.scrollTop = 0;
+function display(element) {
+  removeActifAll();
+  element.classList.add("actif");
+  switch (element) {
+    case Presentation:
+      NameHeader.classList.add("actifH");
+      break;
+    case Projects:
+      ProjectsHeader.classList.add("actifH");
+      break;
+    case Contact:
+      Contactheader.classList.add("actifH");
+      break;
+  }
+  if (allSubProjects.includes(element)) {
+    ProjectsHeader.classList.add("actifH");
+  }
 }
 
-function displayContact() {
-  Projects.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Lowatem.classList.remove("actif");
-  Graphes.classList.remove("actif");
-  Pong.classList.remove("actif");
-  ProjectsHeader.classList.remove("actifH");
-  NameHeader.classList.remove("actifH");
-  Contactheader.classList.add("actifH");
-  Contact.classList.add("actif");
-}
-
-function displayLowatem() {
-  Contact.classList.remove("actif");
-  Projects.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Graphes.classList.remove("actif");
-  Pong.classList.remove("actif");
-  Lowatem.classList.add("actif");
-}
-
-function displayGraphes() {
-  Contact.classList.remove("actif");
-  Projects.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Lowatem.classList.remove("actif");
-  Pong.classList.remove("actif");
-  Graphes.classList.add("actif");
-}
-
-function displayPong() {
-  Contact.classList.remove("actif");
-  Projects.classList.remove("actif");
-  Presentation.classList.remove("actif");
-  Lowatem.classList.remove("actif");
-  Graphes.classList.remove("actif");
-  Pong.classList.add("actif");
-}
-
-if (window.location.href.indexOf("Presentation") > -1) {
-  displayPresentation();
-}
-
-if (window.location.href.indexOf("Projects") > -1) {
-  displayProjects();
-}
-
-if (window.location.href.indexOf("Contact") > -1) {
-  displayContact();
-}
-
-if (window.location.href.indexOf("Lowatem") > -1) {
-  displayLowatem();
-}
-
-if (window.location.href.indexOf("Graphes") > -1) {
-  displayGraphes();
-}
-
-if (window.location.href.indexOf("Pong") > -1) {
-  displayPong();
+switch (true) {
+  case window.location.href.indexOf("Presentation") > -1:
+    display(Presentation);
+    break;
+  case window.location.href.indexOf("Projects") > -1:
+    display(Projects);
+    break;
+  case window.location.href.indexOf("Contact") > -1:
+    display(Contact);
+    break;
+  case window.location.href.indexOf("Lowatem") > -1:
+    display(Lowatem);
+    break;
+  case window.location.href.indexOf("Graphes") > -1:
+    display(Graphes);
+    break;
+  case window.location.href.indexOf("Pong") > -1:
+    display(Pong);
+    break;
+  default:
+    display(Presentation);
+    break;
 }
