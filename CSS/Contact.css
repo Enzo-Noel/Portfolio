@@ -1,30 +1,70 @@
 /* contact */
 
-.actif ul#contact {
+ul#contact {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+}
+
+#contact.contacts ul.list {
+  display: flex;
   align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
 }
 
-.actif #mail.defaultMail {
-  animation: opacityDefaultMail 0.5s 1 normal;
+#email {
+  flex: 1;
 }
 
-.actif #mail.changeMail {
-  animation: opacityChangeMail 0.5s 1 normal;
+#mail.defaultMail {
+  animation: opacityDefaultMail 1s 1 normal;
 }
 
-.actif .email {
-  animation: translationYplus var(--timing-transition) 1 normal;
+#mail.changeMail {
+  animation: opacityChangeMail 1s 1 normal;
 }
 
-.actif .github {
+#email {
+  animation: var(--translationYplus);
+}
+
+#github {
   animation: opacity var(--timing-transition) 1 normal;
 }
 
-.actif .linkedin {
-  animation: translationYminus var(--timing-transition) 1 normal;
+#linkedin {
+  animation: var(--translationYminus);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
+  ul#contact {
+    padding-bottom: 8vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  ul#contact {
+    padding-bottom: 22vh;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  ul#contact {
+    padding-bottom: 26vh;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  ul#contact {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  #email {
+    animation: var(--translationXplus);
+  }
+  #linkedin {
+    animation: var(--translationXminus);
+  }
 }

@@ -1,82 +1,107 @@
 /* Projects */
-main .contenu.actif#Projects {
+main .contenu#Projects {
   align-items: flex-start;
 }
 
-.actif .projects {
+.projects {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: inherit;
-  width: inherit;
+  width: 100%;
+  margin-top: 3rem;
 }
 
-.actif .top {
+.top {
   flex: 1;
   display: flex;
   width: inherit;
   justify-content: space-between;
 }
 
-.actif #Lowatem {
+#LowatemProject {
   flex: 1;
-  animation: translationXplus var(--timing-transition) 1 normal;
+  animation: var(--translationXplus);
 }
 
-.actif #Lowatem a {
+.projects a {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 }
 
-.actif #Lowatem img {
-  object-fit: fill;
-  width: 36rem;
+.projects img {
+  width: 35vw;
+  min-width: 25rem;
+  max-width: 40rem;
 }
 
-.actif #Lowatem img:hover {
+.projects img:hover {
   opacity: 1;
 }
 
-.actif #Lowatem a img:hover + h1,
-.actif #Lowatem a h1:hover {
+.projects a img:hover + h1,
+.projects a h1:hover {
   cursor: pointer;
 }
 
-.actif #Graphes {
+#GraphesProject {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  animation: translationXminus var(--timing-transition) 1 normal;
+  animation: var(--translationXminus);
 }
 
-.actif .bot {
+.bot {
   flex: 1;
 }
 
-.actif #Pong {
-  animation: translationYminus var(--timing-transition) 1 normal;
+#PongProject {
+  animation: var(--translationYminus);
 }
 
-.actif .projects h1 {
+.projects a:hover::before {
+  width: 0%;
+}
+
+.projects h1 {
   padding: 1rem;
 }
 
 @media screen and (max-width: 900px) {
-  main .contenu.actif#Projects {
+  main .contenu#Projects {
     justify-content: flex-start;
   }
-  .actif .top,
-  .actif .bot {
+  .projects {
+    margin-top: 8vh;
+  }
+  .top,
+  .bot {
     flex-direction: column;
   }
-  .actif .projects img.imgProject {
-    width: 30rem !important;
+  .projects img.imgProject {
+    width: 80vw !important;
+    max-width: 40rem;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .actif .projects img.imgProject {
-    width: 25rem !important;
+@media screen and (max-height: 500px) {
+  .projects img.imgProject {
+    width: 80vh !important;
+    max-width: 40rem;
   }
+  .top,
+  .bot {
+    flex-direction: row;
+  }
+}
+
+/* SubProjects */
+
+.subProjects {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.subProjects p {
+  text-align: justify;
+  width: 50%;
 }

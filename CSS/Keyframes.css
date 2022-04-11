@@ -1,5 +1,16 @@
 /* Keyframes */
 
+/* ;; General colors
+    :white  "#ffffff"
+    :red    "#fc618d"
+    :orange "#fd9353"
+    :yellow "#fce566"
+    :green  "#7bd88f"
+    :blue   "#5ad4e6"
+    :purple "#948ae3"
+    :pink   "#fc618d" 
+     */
+
 /* animation-name: color-transition;
   animation-duration: 7s;
   animation-timing-function: linear;
@@ -9,16 +20,31 @@
 /* animation: color-transition 7s linear infinite alternate */
 @keyframes color-transition {
   0% {
-    color: #fc618d;
+    color: var(--colorAnimation1);
   }
   33% {
-    color: #5ad4e6;
+    color: var(--colorAnimation2);
   }
   66% {
-    color: #7bd88f;
+    color: var(--colorAnimation3);
   }
   100% {
-    color: #fce566;
+    color: var(--colorAnimation4);
+  }
+}
+
+@keyframes color-transitionBg {
+  0% {
+    background-color: var(--colorAnimation1);
+  }
+  33% {
+    background-color: var(--colorAnimation2);
+  }
+  66% {
+    background-color: var(--colorAnimation3);
+  }
+  100% {
+    background-color: var(--colorAnimation4);
   }
 }
 
@@ -103,7 +129,7 @@
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.65;
   }
 }
 
@@ -112,7 +138,7 @@
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.65;
   }
 }
 

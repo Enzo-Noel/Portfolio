@@ -1,24 +1,32 @@
 /* GENERAL STYLE */
 
-/* ;; General colors
-    :white  "#ffffff"
-    :red    "#fc618d"
-    :orange "#fd9353"
-    :yellow "#fce566"
-    :green  "#7bd88f"
-    :blue   "#5ad4e6"
-    :purple "#948ae3"
-    :pink   "#fc618d" 
-    
+/*
     autre
     :bg      "#111111"
     :text    "#f1f1f1"*/
 
 /* variables */
 :root {
-  --timing-transition: 0.5s;
   --backgroundColor: #f2e8cf;
   --textColor: #111111;
+
+  --colorAnimation1: #fc618d;
+  --colorAnimation2: #5ad4e6;
+  --colorAnimation3: #7bd88f;
+  --colorAnimation4: #fce566;
+
+  --colorUnderline: #9b2226;
+
+  --ColorAnimation: color-transition 10s linear infinite alternate;
+  --ColorAnimationBg: color-transitionBg 10s linear infinite alternate;
+
+  --timing-transition: 0.5s;
+
+  --translationXplus: translationXplus var(--timing-transition) 1 normal;
+  --translationXminus: translationXminus var(--timing-transition) 1 normal;
+
+  --translationYplus: translationYplus var(--timing-transition) 1 normal;
+  --translationYminus: translationYminus var(--timing-transition) 1 normal;
 }
 
 /* Background */
@@ -42,7 +50,8 @@ a,
 p,
 h1,
 h2,
-li {
+li,
+ul {
   color: var(--textColor);
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
@@ -55,9 +64,30 @@ li {
 }
 
 a:hover {
-  animation: opacityClassic 0.2s linear forwards;
-  -webkit-animation: opacityClassic 0.2s linear forwards;
+  animation: opacityClassic 0.5s 1 ease forwards;
   cursor: pointer;
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10%;
+  width: 0%;
+  background-color: var(--colorUnderline);
+  border-radius: 25px;
+  transition: all 0.5s ease;
+  /* animation: var(--ColorAnimationBg); */
+}
+
+a:hover::before {
+  width: 100%;
 }
 
 ul.list {
@@ -96,22 +126,32 @@ main .contenu.actif {
 }
 
 @media screen and (max-width: 900px) {
-  html {
-    font-size: 14px;
-  }
-  body {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
   main .contenu.actif {
     flex-direction: column;
-    min-height: 85vh;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   html {
     font-size: 12px;
+  }
+  body {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  html {
+    font-size: 10px;
+  }
+  main .contenu.actif {
+    flex-direction: row;
+    min-height: 85vh;
   }
 }
