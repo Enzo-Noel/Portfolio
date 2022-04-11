@@ -70,13 +70,13 @@ main .contenu.actif#Projects {
   .actif .bot {
     flex-direction: column;
   }
-  .actif img.imgProject {
-    width: 30rem;
+  .actif .projects img.imgProject {
+    width: 30rem !important;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .actif img.imgProject {
-    width: 24rem;
+  .actif .projects img.imgProject {
+    width: 25rem !important;
   }
 }

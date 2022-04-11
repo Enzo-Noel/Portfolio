@@ -47,6 +47,17 @@ header nav.menu ul {
   animation: color-transition 7s linear infinite alternate;
 }
 
+.lightAndDark {
+  position: absolute;
+  left: 50%;
+  padding-top: 15rem;
+  transform: translate(-50%, -50%);
+}
+
+#imgColorMode {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
   header {
     min-height: 15vh;
@@ -54,11 +65,17 @@ header nav.menu ul {
   header nav.menu {
     align-items: center;
   }
+  .lightAndDark {
+    padding-top: 20rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
   header nav.menu {
     flex-direction: column;
     justify-content: end;
+  }
+  .lightAndDark {
+    padding-top: 30rem;
   }
 }

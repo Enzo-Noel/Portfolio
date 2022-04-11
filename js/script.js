@@ -91,3 +91,46 @@ switch (true) {
     display(Presentation);
     break;
 }
+
+const lightAndDark = document.querySelector(".lightAndDark");
+const imgColorMode = document.getElementById("imgColorMode");
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  body.classList.replace("light", "dark");
+  colorMode();
+} else if (window.matchMedia("(prefers-color-scheme; light").matches) {
+  body.classList.replace("dark", "light");
+  colorMode();
+}
+
+function dark() {
+  document.documentElement.style.setProperty("--textColor", "#f1f1f1");
+  document.documentElement.style.setProperty("--backgroundColor", "#001219");
+  imgColorMode.src = "Ressources/moon.png";
+}
+
+function light() {
+  document.documentElement.style.setProperty("--textColor", "#111111");
+  document.documentElement.style.setProperty("--backgroundColor", "#f2e8cf");
+  imgColorMode.src = "Ressources/sun.png";
+}
+
+function colorMode() {
+  if (body.classList.contains("dark")) {
+    dark();
+  } else if (body.classList.contains("light")) {
+    light();
+  }
+}
+
+lightAndDark.addEventListener("click", () => {
+  const body = document.body;
+
+  if (body.classList.contains("dark")) {
+    body.classList.replace("dark", "light");
+    colorMode();
+  } else if (body.classList.contains("light")) {
+    body.classList.replace("light", "dark");
+    colorMode();
+  }
+});
