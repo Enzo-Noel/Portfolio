@@ -64,7 +64,7 @@ ul {
 }
 
 a:hover {
-  animation: opacityClassic 0.5s 1 ease forwards;
+  /* animation: opacityClassic 0.5s 1 ease forwards; */
   cursor: pointer;
 }
 
@@ -106,8 +106,6 @@ main .anchor {
 
 main .contenu {
   display: none;
-  padding: 0;
-  margin: 0;
 }
 
 main .contenu.actif {
