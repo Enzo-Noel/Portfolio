@@ -14,8 +14,13 @@
   </head>
   <body id="body" class="light">
     <header>
-      <div class="lightAndDark">
-        <img class="icon" id="imgColorMode" src="" alt="ColorMode" />
+      <div class="colorMode">
+        <img
+          class="icon"
+          id="imgColorMode"
+          src="Ressources/sun.png"
+          alt="ColorMode"
+        />
       </div>
       <nav class="menu list">
         <div id="nameH" class="sousMenu actifH">
@@ -33,9 +38,9 @@
     </header>
     <main id="portfolio">
       <!-- Presentation -->
-      <div class="anchor" id="anchorPresentation"></div>
+      <span class="anchor" id="anchorPresentation"></span>
       <div class="contenu actif" id="Presentation">
-        <article id="EnzoNoel">
+        <article id="EnzoNoel" class="presentation">
           <div>
             <h1 id="name">
               ENZO
@@ -49,14 +54,14 @@
             </p>
           </div>
         </article>
-        <aside id="knowMe">
+        <aside id="knowMe" class="presentation">
           <div>
             <div id="aboutMe">
               <a onclick="display(AboutMe)" href="#anchorAboutMe">About Me</a>
             </div>
-            <ul class="list language">
-              <li>
-                <ul id="html" class="list">
+            <ul class="list languages">
+              <ul id="frontend" class="list">
+                <ul id="html" class="list language">
                   <li>
                     <img
                       class="icon"
@@ -66,17 +71,13 @@
                   </li>
                   <li><p>Html</p></li>
                 </ul>
-              </li>
-              <li>
-                <ul id="css" class="list">
+                <ul id="css" class="list language">
                   <li>
                     <img class="icon" src="Ressources/css-3.png" alt="css 3" />
                   </li>
                   <li><p>CSS</p></li>
                 </ul>
-              </li>
-              <li>
-                <ul id="js" class="list">
+                <ul id="js" class="list language">
                   <li>
                     <img
                       class="icon"
@@ -86,33 +87,30 @@
                   </li>
                   <li><p>JS</p></li>
                 </ul>
-              </li>
-              <li>
-                <ul id="java" class="list">
-                  <li>
-                    <img class="icon" src="Ressources/java.png" alt="Java" />
-                  </li>
-                  <li><p>Java</p></li>
-                </ul>
-              </li>
-              <li>
-                <ul id="csharp" class="list">
-                  <li>
-                    <img
-                      class="icon"
-                      src="Ressources/c-sharp.png"
-                      alt="C-sharp"
-                    />
-                  </li>
-                  <li><p>C#</p></li>
-                </ul>
-              </li>
+              </ul>
+              <ul id="backend" class="list">
+              <ul id="java" class="list language">
+                <li>
+                  <img class="icon" src="Ressources/java.png" alt="Java" />
+                </li>
+                <li><p>Java</p></li>
+              </ul>
+              <ul id="csharp" class="list language">
+                <li>
+                  <img
+                    class="icon"
+                    src="Ressources/c-sharp.png"
+                    alt="C-sharp"
+                  />
+                </li>
+                <li><p>C#</p></li>
+              </ul>
             </ul>
           </div>
         </aside>
       </div>
       <!-- SubPresentation -->
-      <div class="anchor" id="anchorAboutMe"></div>
+      <span class="anchor" id="anchorAboutMe"></span>
       <div class="contenu" id="AboutMe">
         <article>
           <img src="Ressources/photoProfil.jpg" alt="moi" />
@@ -125,47 +123,85 @@
         </article>
       </div>
       <!-- Projects -->
-      <div class="anchor" id="anchorProjects"></div>
+      <span class="anchor" id="anchorProjects"></span>
       <div class="contenu" id="Projects">
-        <div class="projects">
+        <div class="subProjectList">
           <div class="top">
-            <div id="LowatemProject">
-              <a onclick="display(Lowatem)" href="#Lowatem"
+            <div class="projects" id="LowatemProject">
+              <a
+                id="linkLowatem"
+                class="titleProject"
+                onclick="display(Lowatem)"
+                href="#anchorLowatem"
+                >Lowatem</a
+              ><a class="aImg" onclick="display(Lowatem)" href="#anchorLowatem"
                 ><img
                   class="imgProject"
+                  onmouseover="displaySelection(linkLowatem)"
+                  onmouseout="hideSelection(linkLowatem)"
                   src="Ressources/lowatem-gui.png"
                   alt="Lowatem"
-                />
-                <h1>Lowatem</h1></a
-              >
+              /></a>
             </div>
-            <div id="GraphesProject">
-              <a onclick="display(Graphes)" href="#Graphes"><h1>Graphes</h1></a>
+            <div class="projects" id="GraphesProject">
+              <a
+                id="linkGraphes"
+                class="titleProject"
+                onclick="display(Graphes)"
+                href="#anchorGraphes"
+                >Graphes</a
+              ><a class="aImg" onclick="display(Graphes)" href="#anchorGraphes"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkGraphes)"
+                  onmouseout="hideSelection(linkGraphes)"
+                  src="Ressources/lowatem-gui.png"
+                  alt="Graphes"
+              /></a>
             </div>
           </div>
           <div class="bot">
-            <div id="PongProject">
-              <a onclick="display(Pong)" href="#Pong"><h1>Pong</h1></a>
+            <div class="projects" id="PongProject">
+              <a
+                id="linkPong"
+                class="titleProject"
+                onclick="display(Pong)"
+                href="#anchorPong"
+                >Pong</a
+              ><a class="aImg" onclick="display(Pong)" href="#anchorPong"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkPong)"
+                  onmouseout="hideSelection(linkPong)"
+                  src="Ressources/lowatem-gui.png"
+                  alt="Pong"
+              /></a>
             </div>
           </div>
         </div>
       </div>
       <!-- SubProjects -->
+      <span class="anchor" id="anchorLowatem"></span>
       <div class="contenu subProjects" id="Lowatem">
+        <h1>Lowatem</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
           omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
           tempora quos blanditiis aperiam impedit facere quibusdam sed cumque a!
         </p>
       </div>
+      <span class="anchor" id="anchorGraphes"></span>
       <div class="contenu subProjects" id="Graphes">
+        <h1>Graphes</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
           omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
           tempora quos blanditiis aperiam impedit facere quibusdam sed cumque a!
         </p>
       </div>
+      <span class="anchor" id="anchorPong"></span>
       <div class="contenu subProjects" id="Pong">
+        <h1>Pong</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
           omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
@@ -173,56 +209,50 @@
         </p>
       </div>
       <!-- Contact -->
-      <div class="anchor" id="anchorContact"></div>
+      <span class="anchor" id="anchorContact"></span>
       <div class="contenu" id="Contact">
         <div>
-          <ul id="contact" class="list contacts">
-            <li>
-              <ul id="email" class="list">
-                <li>
-                  <img class="icon" src="Ressources/gmail.png" alt="mailIcon" />
-                </li>
-                <li>
-                  <a
-                    id="mail"
-                    onmouseover="changeText()"
-                    onmouseout="defaultText()"
-                    href="mailto:noel.enzo.45@gmail.com"
-                    >Email</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul id="github" class="list">
-                <li>
-                  <img
-                    class="icon github"
-                    src="Ressources/github.png"
-                    alt="githubIcon"
-                  />
-                </li>
-                <li>
-                  <a href="https://github.com/Enzo-Noel?tab=repositories"
-                    >Github</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul id="linkedin" class="list">
-                <li>
-                  <img
-                    class="icon linkedin"
-                    src="Ressources/linkedin.png"
-                    alt="linkedInIcon"
-                  />
-                </li>
-                <li>
-                  <a href="https://fr.linkedin.com/">LinkedIn</a>
-                </li>
-              </ul>
-            </li>
+          <ul id="contacts" class="list">
+            <ul id="email" class="list contact">
+              <li>
+                <img class="icon" src="Ressources/gmail.png" alt="mailIcon" />
+              </li>
+              <li>
+                <a
+                  id="mail"
+                  onmouseover="changeText()"
+                  onmouseout="defaultText()"
+                  href="mailto:noel.enzo.45@gmail.com"
+                  >Email</a
+                >
+              </li>
+            </ul>
+            <ul id="github" class="list contact">
+              <li>
+                <img
+                  class="icon github"
+                  src="Ressources/github.png"
+                  alt="githubIcon"
+                />
+              </li>
+              <li>
+                <a href="https://github.com/Enzo-Noel?tab=repositories"
+                  >Github</a
+                >
+              </li>
+            </ul>
+            <ul id="linkedin" class="list contact">
+              <li>
+                <img
+                  class="icon linkedin"
+                  src="Ressources/linkedin.png"
+                  alt="linkedInIcon"
+                />
+              </li>
+              <li>
+                <a href="https://fr.linkedin.com/">LinkedIn</a>
+              </li>
+            </ul>
           </ul>
         </div>
       </div>

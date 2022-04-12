@@ -3,7 +3,7 @@ main .contenu#Projects {
   align-items: flex-start;
 }
 
-.projects {
+.subProjectList {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -11,57 +11,59 @@ main .contenu#Projects {
   margin-top: 3rem;
 }
 
-.top {
+.top,
+.bot {
   flex: 1;
   display: flex;
-  width: inherit;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-#LowatemProject {
-  flex: 1;
-  animation: var(--translationXplus);
-}
-
-.projects a {
+.subProjectList a {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 }
 
-.projects img {
+.subProjectList .titleProject {
+  margin-bottom: 1rem;
+}
+
+.subProjectList img {
   width: 35vw;
   min-width: 25rem;
-  max-width: 40rem;
+  max-width: 30rem;
 }
 
-.projects img:hover {
-  opacity: 1;
+.subProjectList .select::before {
+  width: 100%;
 }
 
-.projects a img:hover + h1,
-.projects a h1:hover {
-  cursor: pointer;
+.subProjectList .aImg::before {
+  width: 0%;
+}
+
+.projects {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#LowatemProject {
+  animation: var(--translationXplus);
 }
 
 #GraphesProject {
-  flex: 1;
   animation: var(--translationXminus);
-}
-
-.bot {
-  flex: 1;
 }
 
 #PongProject {
   animation: var(--translationYminus);
 }
 
-.projects a:hover::before {
-  width: 0%;
-}
-
-.projects h1 {
+.subProjectList h1 {
   padding: 1rem;
 }
 
@@ -69,21 +71,21 @@ main .contenu#Projects {
   main .contenu#Projects {
     justify-content: flex-start;
   }
-  .projects {
+  .subProjectList {
     margin-top: 8vh;
   }
   .top,
   .bot {
     flex-direction: column;
   }
-  .projects img.imgProject {
+  .subProjectList img.imgProject {
     width: 80vw !important;
     max-width: 40rem;
   }
 }
 
 @media screen and (max-height: 500px) {
-  .projects img.imgProject {
+  .subProjectList img.imgProject {
     width: 80vh !important;
     max-width: 40rem;
   }
@@ -98,10 +100,16 @@ main .contenu#Projects {
 .subProjects {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+}
+
+.subProjects h1 {
+  animation: var(--translationYplus);
 }
 
 .subProjects p {
   text-align: justify;
   width: 50%;
+  animation: var(--translationYminus);
 }

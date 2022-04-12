@@ -1,19 +1,19 @@
-/* contact */
+/* contacts */
 
-ul#contact {
+ul#contacts {
   display: flex;
   flex-direction: column;
   width: 100vw;
 }
 
-#contact.contacts ul.list {
+#contacts ul.list {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 0.5rem;
 }
 
-#email {
+.contact {
   flex: 1;
 }
 
@@ -38,25 +38,25 @@ ul#contact {
 }
 
 @media screen and (max-width: 650px) {
-  ul#contact {
+  ul#contacts {
     padding-bottom: 8vh;
   }
 }
 
 @media screen and (max-width: 500px) {
-  ul#contact {
+  ul#contacts {
     padding-bottom: 22vh;
   }
 }
 
 @media screen and (max-width: 350px) {
-  ul#contact {
+  ul#contacts {
     padding-bottom: 26vh;
   }
 }
 
 @media screen and (max-height: 500px) {
-  ul#contact {
+  ul#contacts {
     display: flex;
     justify-content: space-around;
     flex-direction: row;

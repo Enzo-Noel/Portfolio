@@ -1,41 +1,82 @@
-var mail = document.getElementById("mail");
-var Presentation = document.getElementById("Presentation");
-var AboutMe = document.getElementById("AboutMe");
-var Projects = document.getElementById("Projects");
-var Contact = document.getElementById("Contact");
-var Lowatem = document.getElementById("Lowatem");
-var Graphes = document.getElementById("Graphes");
-var Pong = document.getElementById("Pong");
-var NameHeader = document.getElementById("nameH");
-var ProjectsHeader = document.getElementById("projectH");
-var Contactheader = document.getElementById("contactH");
+// Variables and constantes
 
-var allContainers = [];
-allContainers.push(
+const mail = document.getElementById("mail");
+
+const Presentation = document.getElementById("Presentation");
+const Projects = document.getElementById("Projects");
+const Contact = document.getElementById("Contact");
+
+const AboutMe = document.getElementById("AboutMe");
+
+const Lowatem = document.getElementById("Lowatem");
+const Graphes = document.getElementById("Graphes");
+const Pong = document.getElementById("Pong");
+
+const NameHeader = document.getElementById("nameH");
+const ProjectsHeader = document.getElementById("projectH");
+const Contactheader = document.getElementById("contactH");
+
+const colors = document.querySelector(".colorMode");
+const imgColorMode = document.getElementById("imgColorMode");
+const root = document.documentElement.style;
+
+const imgProject = document.querySelector(".imgProject");
+
+var where = 0;
+var whereSubProject = 0;
+// Arrays
+
+const Containers = [];
+Containers.push(
   Presentation,
   AboutMe,
   Projects,
-  Contact,
   Lowatem,
   Graphes,
-  Pong
+  Pong,
+  Contact
 );
 
-var allHeaders = [];
-allHeaders.push(NameHeader, ProjectsHeader, Contactheader);
+const Headers = [];
+Headers.push(NameHeader, ProjectsHeader, Contactheader);
 
-var allSubProjects = [];
-allSubProjects.push(Lowatem, Graphes, Pong);
+const navs = [];
+navs.push(Presentation, Projects, Contact);
 
-window.addEventListener("click", () => {
-  allContainers.forEach((element) => {
-    if (!element.classList.contains("actif")) {
-      element.style.display = "none";
-    } else {
-      element.style.display = "flex";
-    }
-  });
-});
+const SubProjects = [];
+SubProjects.push(Lowatem, Graphes, Pong);
+
+const whereHref = new Map();
+whereHref.set("0", "anchorPresentation");
+whereHref.set("1", "anchorProjects");
+whereHref.set("2", "anchorContact");
+
+const whereHrefSubProjects = new Map();
+whereHrefSubProjects.set("0", "anchorLowatem");
+whereHrefSubProjects.set("1", "anchorGraphes");
+whereHrefSubProjects.set("2", "anchorPong");
+
+// Run directly
+
+loadWhere();
+
+colors.addEventListener("click", colorMode);
+
+window.addEventListener("hashchange", loadWhere);
+
+window.addEventListener("wheel", mouvement);
+
+// Conditions
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  body.classList.replace("light", "dark");
+  colorModeSwitch();
+} else if (window.matchMedia("(prefers-color-scheme; light").matches) {
+  body.classList.replace("dark", "light");
+  colorModeSwitch();
+}
+
+// Functions
 
 function defaultText() {
   mail.textContent = "Email";
@@ -49,13 +90,23 @@ function changeText() {
   mail.classList.add("changeMail");
 }
 
+function hideAndSeek() {
+  Containers.forEach((element) => {
+    if (element.classList.contains("actif")) {
+      element.style.visibility = "visible";
+    } else {
+      element.style.visibility = "hidden";
+    }
+  });
+}
+
 function removeActifAll() {
-  allContainers.forEach((element) => {
+  Containers.forEach((element) => {
     if (element.classList.contains("actif")) {
       element.classList.remove("actif");
     }
   });
-  allHeaders.forEach((element) => {
+  Headers.forEach((element) => {
     if (element.classList.contains("actifH")) {
       element.classList.remove("actifH");
     }
@@ -76,52 +127,83 @@ function display(element) {
       Contactheader.classList.add("actifH");
       break;
   }
-  if (allSubProjects.includes(element)) {
+  if (SubProjects.includes(element)) {
     ProjectsHeader.classList.add("actifH");
   }
   if (element == AboutMe) {
     NameHeader.classList.add("actifH");
   }
+  hideAndSeek();
 }
 
-switch (true) {
-  case window.location.href.indexOf("Presentation") > -1:
-    display(Presentation);
-    break;
-  case window.location.href.indexOf("Projects") > -1:
-    display(Projects);
-    break;
-  case window.location.href.indexOf("Contact") > -1:
-    display(Contact);
-    break;
-  case window.location.href.indexOf("Lowatem") > -1:
-    display(Lowatem);
-    break;
-  case window.location.href.indexOf("Graphes") > -1:
-    display(Graphes);
-    break;
-  case window.location.href.indexOf("Pong") > -1:
-    display(Pong);
-    break;
-  case window.location.href.indexOf("AboutMe") > -1:
-    display(AboutMe);
-    break;
-  default:
-    display(Presentation);
-    break;
+function loadWhere() {
+  switch (true) {
+    case window.location.href.includes("anchorPresentation"):
+      display(Presentation);
+      where = 0;
+      break;
+    case window.location.href.includes("anchorAboutMe"):
+      display(AboutMe);
+      break;
+    case window.location.href.includes("anchorProjects"):
+      display(Projects);
+      where = 1;
+      break;
+    case window.location.href.includes("anchorLowatem"):
+      display(Lowatem);
+      whereSubProject = 0;
+      break;
+    case window.location.href.includes("anchorGraphes"):
+      display(Graphes);
+      whereSubProject = 1;
+      break;
+    case window.location.href.includes("anchorPong"):
+      display(Pong);
+      whereSubProject = 2;
+      break;
+    case window.location.href.includes("anchorContact"):
+      display(Contact);
+      where = 2;
+      break;
+
+    default:
+      display(Presentation);
+      where = 0;
+      break;
+  }
 }
 
-const lightAndDark = document.querySelector(".lightAndDark");
-const imgColorMode = document.getElementById("imgColorMode");
-const root = document.documentElement.style;
-
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  body.classList.replace("light", "dark");
-  colorMode();
-} else if (window.matchMedia("(prefers-color-scheme; light").matches) {
-  body.classList.replace("dark", "light");
-  colorMode();
+function mouvement(event) {
+  if (event.deltaY < 0) {
+    if (where > 0) {
+      where -= 1;
+    }
+    if (whereSubProject > 0) {
+      whereSubProject -= 1;
+    }
+  } else if (event.deltaY > 0) {
+    if (where < navs.length - 1) {
+      where += 1;
+    }
+    if (whereSubProject < SubProjects.length - 1) {
+      whereSubProject += 1;
+    }
+  }
+  whereHref.forEach((element) => {
+    if (window.location.href.includes(element)) {
+      window.location.href = "#" + whereHref.get(where.toString());
+    }
+  });
+  whereHrefSubProjects.forEach((element) => {
+    if (window.location.href.includes(element)) {
+      window.location.href =
+        "#" + whereHrefSubProjects.get(whereSubProject.toString());
+    }
+  });
+  loadWhere();
 }
+
+// ColorMode
 
 function dark() {
   root.setProperty("--textColor", "#f1f1f1");
@@ -149,7 +231,7 @@ function light() {
   imgColorMode.src = "Ressources/sun.png";
 }
 
-function colorMode() {
+function colorModeSwitch() {
   if (body.classList.contains("dark")) {
     dark();
   } else if (body.classList.contains("light")) {
@@ -157,14 +239,24 @@ function colorMode() {
   }
 }
 
-lightAndDark.addEventListener("click", () => {
+function colorMode() {
   const body = document.body;
 
   if (body.classList.contains("dark")) {
     body.classList.replace("dark", "light");
-    colorMode();
+    colorModeSwitch();
   } else if (body.classList.contains("light")) {
     body.classList.replace("light", "dark");
-    colorMode();
+    colorModeSwitch();
   }
-});
+}
+
+// Selection for the img:hover affect the "title" link::before
+
+function displaySelection(element) {
+  element.classList.add("select");
+}
+
+function hideSelection(element) {
+  element.classList.remove("select");
+}
