@@ -173,38 +173,48 @@ function loadWhere() {
   }
 }
 
+var wait = false;
+
 function mouvement(event) {
-  if (event.deltaY < 0) {
-    if (where > 0) {
-      where -= 1;
-    }
-    if (whereSubProject > 0) {
-      whereSubProject -= 1;
-    }
-  } else if (event.deltaY > 0) {
-    if (where < navs.length - 1) {
-      where += 1;
-    }
-    if (whereSubProject < SubProjects.length - 1) {
-      whereSubProject += 1;
-    }
-  }
-  if (window.location.href.includes("#")) {
-    whereHref.forEach((element) => {
-      if (window.location.href.includes(element)) {
-        window.location.href = "#" + whereHref.get(where.toString());
+  if (wait == false) {
+    if (event.deltaY < 0) {
+      if (where > 0) {
+        where -= 1;
       }
-    });
-    whereHrefSubProjects.forEach((element) => {
-      if (window.location.href.includes(element)) {
-        window.location.href =
-          "#" + whereHrefSubProjects.get(whereSubProject.toString());
+      if (whereSubProject > 0) {
+        whereSubProject -= 1;
       }
-    });
-  } else {
-    window.location.href = "#" + whereHref.get(where.toString());
+    } else if (event.deltaY > 0) {
+      if (where < navs.length - 1) {
+        where += 1;
+      }
+      if (whereSubProject < SubProjects.length - 1) {
+        whereSubProject += 1;
+      }
+    }
+    if (window.location.href.includes("#")) {
+      whereHref.forEach((element) => {
+        if (window.location.href.includes(element)) {
+          window.location.href = "#" + whereHref.get(where.toString());
+        }
+      });
+      whereHrefSubProjects.forEach((element) => {
+        if (window.location.href.includes(element)) {
+          window.location.href =
+            "#" + whereHrefSubProjects.get(whereSubProject.toString());
+        }
+      });
+    } else {
+      window.location.href = "#" + whereHref.get(where.toString());
+    }
+    loadWhere();
+    wait = true;
+    setTimeout(waitFalse, 850);
   }
-  loadWhere();
+}
+
+function waitFalse() {
+  wait = false;
 }
 
 // ColorMode
