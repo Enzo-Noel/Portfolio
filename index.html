@@ -60,7 +60,7 @@
               <a onclick="display(AboutMe)" href="#anchorAboutMe">About Me</a>
             </div>
             <ul class="list languages">
-              <ul id="frontend" class="list">
+              <!-- <ul id="frontend" class="list"> -->
                 <ul id="html" class="list language">
                   <li>
                     <img
@@ -87,8 +87,8 @@
                   </li>
                   <li><p>JS</p></li>
                 </ul>
-              </ul>
-              <ul id="backend" class="list">
+              <!-- </ul> -->
+              <!-- <ul id="backend" class="list"> -->
               <ul id="java" class="list language">
                 <li>
                   <img class="icon" src="Ressources/java.png" alt="Java" />
@@ -105,7 +105,7 @@
                 </li>
                 <li><p>C#</p></li>
               </ul>
-            </ul>
+            <!-- </ul> -->
           </div>
         </aside>
       </div>
@@ -113,12 +113,13 @@
       <span class="anchor" id="anchorAboutMe"></span>
       <div class="contenu" id="AboutMe">
         <article>
-          <img src="Ressources/photoProfil.jpg" alt="moi" />
+          <img id="pp" src="Ressources/photoProfilLight.jpg" alt="moi" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            voluptatibus dolores eaque dolor esse amet quam alias nam in,
-            recusandae reprehenderit itaque sequi dolorum cupiditate dicta
-            perferendis, repellat est porro?
+            Born in 1998 in Orléans, I am a French student based in Bordeaux now,
+            currently in my first year. Before that, I studied architecture
+            for 2 years. Finally, I chose the path of computer science,
+            because it is my favorite field. As I like to create and design,
+            be it art or software, the computer science path is the best for me.
           </p>
         </article>
       </div>
@@ -127,6 +128,22 @@
       <div class="contenu" id="Projects">
         <div class="subProjectList">
           <div class="top">
+            <div class="projects" id="WebProject">
+              <a
+                id="linkWeb"
+                class="titleProject"
+                onclick="display(Web)"
+                href="#anchorWeb"
+                >Web</a
+              ><a class="aImg" onclick="display(Web)" href="#anchorWeb"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkWeb)"
+                  onmouseout="hideSelection(linkWeb)"
+                  src="Ressources/web.jpg"
+                  alt="Web"
+              /></a>
+            </div>
             <div class="projects" id="LowatemProject">
               <a
                 id="linkLowatem"
@@ -139,28 +156,10 @@
                   class="imgProject"
                   onmouseover="displaySelection(linkLowatem)"
                   onmouseout="hideSelection(linkLowatem)"
-                  src="Ressources/lowatem-gui.png"
+                  src="Ressources/java2.png"
                   alt="Lowatem"
               /></a>
             </div>
-            <div class="projects" id="GraphesProject">
-              <a
-                id="linkGraphes"
-                class="titleProject"
-                onclick="display(Graphes)"
-                href="#anchorGraphes"
-                >Graphes</a
-              ><a class="aImg" onclick="display(Graphes)" href="#anchorGraphes"
-                ><img
-                  class="imgProject"
-                  onmouseover="displaySelection(linkGraphes)"
-                  onmouseout="hideSelection(linkGraphes)"
-                  src="Ressources/lowatem-gui.png"
-                  alt="Graphes"
-              /></a>
-            </div>
-          </div>
-          <div class="bot">
             <div class="projects" id="PongProject">
               <a
                 id="linkPong"
@@ -173,40 +172,117 @@
                   class="imgProject"
                   onmouseover="displaySelection(linkPong)"
                   onmouseout="hideSelection(linkPong)"
-                  src="Ressources/lowatem-gui.png"
+                  src="Ressources/pong.png"
                   alt="Pong"
+              /></a>
+            </div>
+          </div>
+          <div class="bot">
+            <div class="projects" id="DataBaseProject">
+              <a
+                id="linkDataBase"
+                class="titleProject"
+                onclick="display(DataBase)"
+                href="#anchorDataBase"
+                >DataBase</a
+              ><a class="aImg" onclick="display(DataBase)" href="#anchorDataBase"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkDataBase)"
+                  onmouseout="hideSelection(linkDataBase)"
+                  src="Ressources/database2.jpg"
+                  alt="DataBase"
+              /></a>
+            </div>
+            <div class="projects" id="SystemProject">
+              <a
+                id="linkSystem"
+                class="titleProject"
+                onclick="display(System)"
+                href="#anchorSystem"
+                >System</a
+              ><a class="aImg" onclick="display(System)" href="#anchorSystem"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkSystem)"
+                  onmouseout="hideSelection(linkSystem)"
+                  src="Ressources/System.jpg"
+                  alt="System"
+              /></a>
+            </div>
+            <div class="projects" id="JpoProject">
+              <a
+                id="linkJpo"
+                class="titleProject"
+                onclick="display(Jpo)"
+                href="#anchorJpo"
+                >Open day</a
+              ><a class="aImg" onclick="display(Jpo)" href="#anchorJpo"
+                ><img
+                  class="imgProject"
+                  onmouseover="displaySelection(linkJpo)"
+                  onmouseout="hideSelection(linkJpo)"
+                  src="Ressources/jpo.jpg"
+                  alt="Jpo"
               /></a>
             </div>
           </div>
         </div>
       </div>
       <!-- SubProjects -->
+      <span class="anchor" id="anchorWeb"></span>
+      <div class="contenu subProjects" id="Web">
+        <img class="bgImg" src="Ressources/web.jpg" alt="webBg">
+        <h1 id="web"> Web</h1>
+        <p>
+          I had to design a site to present a company that we created fictitiously. However my biggest web project now is this portfolio.
+        </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="webPdf"></a>
+      </div>
       <span class="anchor" id="anchorLowatem"></span>
       <div class="contenu subProjects" id="Lowatem">
-        <h1>Lowatem</h1>
+        <img class="bgImg" src="Ressources/java2.png" alt="javaBg">
+        <h1 id="lowatem"> Lowatem</h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
-          omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
-          tempora quos blanditiis aperiam impedit facere quibusdam sed cumque a!
+          Lowatem is a project where I had to code the rules of a game, then create an AI that plays the best. It was my first big project in Java
         </p>
-      </div>
-      <span class="anchor" id="anchorGraphes"></span>
-      <div class="contenu subProjects" id="Graphes">
-        <h1>Graphes</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
-          omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
-          tempora quos blanditiis aperiam impedit facere quibusdam sed cumque a!
-        </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="lowatemPdf"></a>
       </div>
       <span class="anchor" id="anchorPong"></span>
       <div class="contenu subProjects" id="Pong">
-        <h1>Pong</h1>
+        <img class="bgImg" src="Ressources/pong.png" alt="pongBg">
+        <h1 id="pong"> Pong</h1>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero,
-          omnis! Magnam beatae earum ipsa possimus quo quasi, atque quis non,
-          tempora quos blanditiis aperiam impedit facere quibusdam sed cumque a!
+          Pong is my very first project, it consisted in making a pong game, with some rules to respect, this project was made with Processing software.
         </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="pongPdf"></a>
+      </div>
+      <span class="anchor" id="anchorDataBase"></span>
+      <div class="contenu subProjects" id="DataBase">
+        <img class="bgImg" src="Ressources/database2.jpg" alt="databaseBg">
+        <h1 id="database"> DataBase</h1>
+        <p>
+          I had to create and feed a database of all the wines from all the castles in the Bordeaux region, and then design an application to manage this database.
+        </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="databasePdf"></a>
+      </div>
+      <span class="anchor" id="anchorSystem"></span>
+      <div class="contenu subProjects" id="System">
+        <img class="bgImg" src="Ressources/System.jpg" alt="systemBg">
+        <h1 id="system"> System</h1>
+        <p>
+          Administration of a Linux system with several users and installation of specific software on certain users, only via a terminal
+        </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="systemPdf"></a>
+      </div>
+      <span class="anchor" id="anchorJpo"></span>
+      <div class="contenu subProjects" id="Jpo">
+        <img class="bgImg" src="Ressources/jpo.jpg" alt="jpoBg">
+        <h1 id="jpo"> Open Day</h1>
+        <p>
+          Creating a poster for my university's open day, graphic design and finding catchy ideas were the key words of this project.
+        </p>
+        <a class="pdf" href="Ressources/sujet.pdf"><img class="icon" src="Ressources/pdf.png" alt="jpoPdf"></a>
       </div>
       <!-- Contact -->
       <span class="anchor" id="anchorContact"></span>

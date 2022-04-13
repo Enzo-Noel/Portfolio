@@ -8,7 +8,7 @@ main .contenu#Projects {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: 3rem;
+  height: 92vh;
 }
 
 .top,
@@ -20,10 +20,12 @@ main .contenu#Projects {
   width: 100%;
 }
 
-.subProjectList a {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+.top {
+  margin-top: 4rem;
+}
+
+.bot {
+  margin-bottom: 3rem;
 }
 
 .subProjectList .titleProject {
@@ -31,9 +33,11 @@ main .contenu#Projects {
 }
 
 .subProjectList img {
-  width: 35vw;
-  min-width: 25rem;
+  width: 25vw;
+  min-width: 10rem;
   max-width: 30rem;
+  height: 15vw;
+  border-radius: 30px;
 }
 
 .subProjectList .select::before {
@@ -51,20 +55,17 @@ main .contenu#Projects {
   align-items: center;
 }
 
-#LowatemProject {
+#WebProject,
+#DataBaseProject {
   animation: var(--translationXplus);
 }
-
-#GraphesProject {
+#LowatemProject,
+#SystemProject {
+  animation: opacity var(--timing-transition) 1 normal;
+}
+#PongProject,
+#JpoProject {
   animation: var(--translationXminus);
-}
-
-#PongProject {
-  animation: var(--translationYminus);
-}
-
-.subProjectList h1 {
-  padding: 1rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -77,21 +78,20 @@ main .contenu#Projects {
   .top,
   .bot {
     flex-direction: column;
+    animation: opacity var(--timing-transition) 1 normal;
   }
-  .subProjectList img.imgProject {
-    width: 80vw !important;
-    max-width: 40rem;
+  .aImg {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
   }
-}
-
-@media screen and (max-height: 500px) {
-  .subProjectList img.imgProject {
-    width: 80vh !important;
-    max-width: 40rem;
+  .projects {
+    margin: 0;
+    padding: 0;
   }
-  .top,
-  .bot {
-    flex-direction: row;
+  .subProjectList {
+    height: 80vh;
   }
 }
 
@@ -99,17 +99,98 @@ main .contenu#Projects {
 
 .subProjects {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 }
 
 .subProjects h1 {
+  text-align: center;
   animation: var(--translationYplus);
 }
 
 .subProjects p {
   text-align: justify;
-  width: 50%;
+  width: 50rem;
+  height: 15rem;
+  animation: opacity var(--timing-transition) 1 normal;
+}
+
+body.dark .bgImg {
+  opacity: 0.5;
+}
+
+body.light .bgImg {
+  opacity: 0.5;
+}
+
+.bgImg {
+  position: absolute;
+  z-index: -1;
+  width: 60rem;
+  height: 38rem;
+  border-radius: 30px;
+  animation: demiVisibility var(--timing-transition) 1 normal;
+}
+
+.pdf {
   animation: var(--translationYminus);
+}
+
+.subProjects .pdf::before {
+  width: 0%;
+}
+
+body.light .subProjects p,
+body.light .subProjects h1 {
+  color: black !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .bgImg {
+    width: 95vw;
+    min-width: 50rem;
+    height: 60vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bgImg {
+    width: 85vw;
+    min-width: 25rem;
+  }
+  .subProjects p,
+  .subProjects h1 {
+    font-size: x-large;
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .subProjects p {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .subProjects p {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bgImg {
+    transform: translate(0rem, -4rem);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .subProjects p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .subProjects p {
+    font-size: larger;
+  }
 }

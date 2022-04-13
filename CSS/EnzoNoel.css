@@ -27,9 +27,12 @@
 
 #knowMe .languages {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+#knowMe #java::before {
+  content: "";
 }
 
 #aboutMe {
@@ -104,12 +107,12 @@
 #AboutMe p {
   text-align: justify;
   width: 40%;
-  font-size: xx-large;
+  font-size: x-large;
   animation: var(--translationXminus);
 }
 
 #AboutMe img {
-  border-radius: 50%;
+  border-radius: 25%;
   width: 25vw;
   min-width: 20rem;
   padding: 2rem;
@@ -122,21 +125,29 @@
   }
   #AboutMe img {
     min-width: 15rem !important;
+    animation: var(--translationYplus);
   }
   #AboutMe p {
-    font-size: 2rem;
+    animation: var(--translationYminus);
+    font-size: x-large;
     width: 75%;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   #AboutMe p {
-    font-size: 2rem;
+    font-size: large;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
   #AboutMe p {
-    font-size: 1.5rem;
+    font-size: larger;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  #AboutMe p {
+    font-size: larger;
   }
 }

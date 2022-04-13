@@ -8,9 +8,12 @@ const Contact = document.getElementById("Contact");
 
 const AboutMe = document.getElementById("AboutMe");
 
+const Web = document.getElementById("Web");
 const Lowatem = document.getElementById("Lowatem");
-const Graphes = document.getElementById("Graphes");
 const Pong = document.getElementById("Pong");
+const DataBase = document.getElementById("DataBase");
+const System = document.getElementById("System");
+const Jpo = document.getElementById("Jpo");
 
 const NameHeader = document.getElementById("nameH");
 const ProjectsHeader = document.getElementById("projectH");
@@ -18,12 +21,18 @@ const Contactheader = document.getElementById("contactH");
 
 const colors = document.querySelector(".colorMode");
 const imgColorMode = document.getElementById("imgColorMode");
+const pp = document.getElementById("pp");
 const root = document.documentElement.style;
+
+const lowatem = document.getElementById("lowatem");
 
 const imgProject = document.querySelector(".imgProject");
 
 var where = 0;
 var whereSubProject = 0;
+
+var wait = false;
+
 // Arrays
 
 const Containers = [];
@@ -31,9 +40,12 @@ Containers.push(
   Presentation,
   AboutMe,
   Projects,
+  Web,
   Lowatem,
-  Graphes,
   Pong,
+  DataBase,
+  System,
+  Jpo,
   Contact
 );
 
@@ -44,7 +56,7 @@ const navs = [];
 navs.push(Presentation, Projects, Contact);
 
 const SubProjects = [];
-SubProjects.push(Lowatem, Graphes, Pong);
+SubProjects.push(Web, Lowatem, Pong, DataBase, System, Jpo);
 
 const whereHref = new Map();
 whereHref.set("0", "anchorPresentation");
@@ -52,9 +64,12 @@ whereHref.set("1", "anchorProjects");
 whereHref.set("2", "anchorContact");
 
 const whereHrefSubProjects = new Map();
-whereHrefSubProjects.set("0", "anchorLowatem");
-whereHrefSubProjects.set("1", "anchorGraphes");
+whereHrefSubProjects.set("0", "anchorWeb");
+whereHrefSubProjects.set("1", "anchorLowatem");
 whereHrefSubProjects.set("2", "anchorPong");
+whereHrefSubProjects.set("3", "anchorDataBase");
+whereHrefSubProjects.set("4", "anchorSystem");
+whereHrefSubProjects.set("5", "anchorJpo");
 
 // Run directly
 
@@ -142,30 +157,41 @@ function loadWhere() {
       display(Presentation);
       where = 0;
       break;
-    case window.location.href.includes("anchorAboutMe"):
-      display(AboutMe);
-      break;
     case window.location.href.includes("anchorProjects"):
       display(Projects);
       where = 1;
       break;
-    case window.location.href.includes("anchorLowatem"):
-      display(Lowatem);
+    case window.location.href.includes("anchorContact"):
+      display(Contact);
+      where = 2;
+      break;
+    case window.location.href.includes("anchorAboutMe"):
+      display(AboutMe);
+      break;
+    case window.location.href.includes("anchorWeb"):
+      display(Web);
       whereSubProject = 0;
       break;
-    case window.location.href.includes("anchorGraphes"):
-      display(Graphes);
+    case window.location.href.includes("anchorLowatem"):
+      display(Lowatem);
       whereSubProject = 1;
       break;
     case window.location.href.includes("anchorPong"):
       display(Pong);
       whereSubProject = 2;
       break;
-    case window.location.href.includes("anchorContact"):
-      display(Contact);
-      where = 2;
+    case window.location.href.includes("anchorDataBase"):
+      display(DataBase);
+      whereSubProject = 3;
       break;
-
+    case window.location.href.includes("anchorSystem"):
+      display(System);
+      whereSubProject = 4;
+      break;
+    case window.location.href.includes("anchorJpo"):
+      display(Jpo);
+      whereSubProject = 5;
+      break;
     default:
       display(Presentation);
       where = 0;
@@ -173,10 +199,10 @@ function loadWhere() {
   }
 }
 
-var wait = false;
+var timeOut;
 
 function mouvement(event) {
-  if (wait == false) {
+  if (!wait) {
     if (event.deltaY < 0) {
       if (where > 0) {
         where -= 1;
@@ -209,8 +235,19 @@ function mouvement(event) {
     }
     loadWhere();
     wait = true;
-    setTimeout(waitFalse, 850);
+    timeOut = setTimeout(waitFalse, 1000);
+  } else {
+    if (event.deltaY != 0) {
+      clearTimeout(timeOut);
+      timeOut = setTimeout(waitFalse, 500);
+    }
   }
+}
+
+function scroll() {
+  window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+  });
 }
 
 function waitFalse() {
@@ -230,6 +267,7 @@ function dark() {
 
   root.setProperty("--colorUnderline", "#005f73");
   imgColorMode.src = "Ressources/moon.png";
+  pp.src = "Ressources/photoProfilDark.jpg";
 }
 
 function light() {
@@ -243,6 +281,7 @@ function light() {
 
   root.setProperty("--colorUnderline", "#9b2226");
   imgColorMode.src = "Ressources/sun.png";
+  pp.src = "Ressources/photoProfilLight.jpg";
 }
 
 function colorModeSwitch() {

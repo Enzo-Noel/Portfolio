@@ -159,3 +159,15 @@
     opacity: 1;
   }
 }
+
+@keyframes demiVisibility {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
