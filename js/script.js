@@ -189,17 +189,21 @@ function mouvement(event) {
       whereSubProject += 1;
     }
   }
-  whereHref.forEach((element) => {
-    if (window.location.href.includes(element)) {
-      window.location.href = "#" + whereHref.get(where.toString());
-    }
-  });
-  whereHrefSubProjects.forEach((element) => {
-    if (window.location.href.includes(element)) {
-      window.location.href =
-        "#" + whereHrefSubProjects.get(whereSubProject.toString());
-    }
-  });
+  if (window.location.href.includes("#")) {
+    whereHref.forEach((element) => {
+      if (window.location.href.includes(element)) {
+        window.location.href = "#" + whereHref.get(where.toString());
+      }
+    });
+    whereHrefSubProjects.forEach((element) => {
+      if (window.location.href.includes(element)) {
+        window.location.href =
+          "#" + whereHrefSubProjects.get(whereSubProject.toString());
+      }
+    });
+  } else {
+    window.location.href = "#" + whereHref.get(where.toString());
+  }
   loadWhere();
 }
 
