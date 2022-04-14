@@ -137,7 +137,7 @@ main .contenu.actif {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 390px) {
   html {
     font-size: 10px;
   }
