@@ -13,7 +13,7 @@ const Lowatem = document.getElementById("Lowatem");
 const Pong = document.getElementById("Pong");
 const DataBase = document.getElementById("DataBase");
 const System = document.getElementById("System");
-const Jpo = document.getElementById("Jpo");
+const Gestion = document.getElementById("Gestion");
 
 const NameHeader = document.getElementById("nameH");
 const ProjectsHeader = document.getElementById("projectH");
@@ -45,7 +45,7 @@ Containers.push(
   Pong,
   DataBase,
   System,
-  Jpo,
+  Gestion,
   Contact
 );
 
@@ -56,7 +56,7 @@ const navs = [];
 navs.push(Presentation, Projects, Contact);
 
 const SubProjects = [];
-SubProjects.push(Web, Lowatem, Pong, DataBase, System, Jpo);
+SubProjects.push(Web, Lowatem, Pong, DataBase, System, Gestion);
 
 const whereHref = new Map();
 whereHref.set("0", "anchorPresentation");
@@ -69,7 +69,7 @@ whereHrefSubProjects.set("1", "anchorLowatem");
 whereHrefSubProjects.set("2", "anchorPong");
 whereHrefSubProjects.set("3", "anchorDataBase");
 whereHrefSubProjects.set("4", "anchorSystem");
-whereHrefSubProjects.set("5", "anchorJpo");
+whereHrefSubProjects.set("5", "anchorGestion");
 
 // Run directly
 
@@ -188,8 +188,8 @@ function loadWhere() {
       display(System);
       whereSubProject = 4;
       break;
-    case window.location.href.includes("anchorJpo"):
-      display(Jpo);
+    case window.location.href.includes("anchorGestion"):
+      display(Gestion);
       whereSubProject = 5;
       break;
     default:
@@ -244,12 +244,6 @@ function mouvement(event) {
   }
 }
 
-function scroll() {
-  window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-  });
-}
-
 function waitFalse() {
   wait = false;
 }
@@ -266,8 +260,8 @@ function dark() {
   root.setProperty("--colorAnimation4", "#fce566");
 
   root.setProperty("--colorUnderline", "#005f73");
-  imgColorMode.src = "Ressources/moon.png";
-  pp.src = "Ressources/photoProfilDark.jpg";
+  imgColorMode.src = "Ressources/icon/moon.png";
+  pp.src = "Ressources/image/photoProfilDark.jpg";
 }
 
 function light() {
@@ -280,8 +274,8 @@ function light() {
   root.setProperty("--colorAnimation4", "#ff5400");
 
   root.setProperty("--colorUnderline", "#9b2226");
-  imgColorMode.src = "Ressources/sun.png";
-  pp.src = "Ressources/photoProfilLight.jpg";
+  imgColorMode.src = "Ressources/icon/sun.png";
+  pp.src = "Ressources/image/photoProfilLight.jpg";
 }
 
 function colorModeSwitch() {

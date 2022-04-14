@@ -32,12 +32,17 @@ main .contenu#Projects {
   margin-bottom: 1rem;
 }
 
+.aImg {
+  border-radius: 30px;
+  height: 15vw;
+}
+
 .subProjectList img {
   width: 25vw;
-  min-width: 10rem;
   max-width: 30rem;
   height: 15vw;
   border-radius: 30px;
+  position: relative;
 }
 
 .subProjectList .select::before {
@@ -64,8 +69,17 @@ main .contenu#Projects {
   animation: opacity var(--timing-transition) 1 normal;
 }
 #PongProject,
-#JpoProject {
+#GestionProject {
   animation: var(--translationXminus);
+}
+
+.pdf::after {
+  content: "More about it";
+  width: 17rem;
+  position: absolute;
+  transform: translate(-58%, -50%);
+  top: -2rem;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 900px) {
@@ -84,10 +98,9 @@ main .contenu#Projects {
   #LowatemProject,
   #SystemProject,
   #PongProject,
-  #JpoProject {
+  #GestionProject {
     animation: opacity var(--timing-transition) 1 normal;
   }
-
   .aImg {
     display: none;
     visibility: hidden;
@@ -100,6 +113,15 @@ main .contenu#Projects {
   }
   .subProjectList {
     height: 80vh;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .aImg {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
   }
 }
 
