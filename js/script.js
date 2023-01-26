@@ -133,6 +133,7 @@ function loadWhere() {
     display(anchor);
   } else {
     window.location.hash = "Homepage";
+    where = 0;
   }
 }
 
