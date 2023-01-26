@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/Keyframes.css" />
   <link rel="stylesheet" href="CSS/General.css" />
   <link rel="stylesheet" href="CSS/Header.css" />
-  <link rel="stylesheet" href="CSS/Keyframes.css" />
-  <link rel="stylesheet" href="CSS/EnzoNoel.css" />
+  <link rel="stylesheet" href="CSS/Homepage.css" />
   <link rel="stylesheet" href="CSS/Projects.css" />
   <link rel="stylesheet" href="CSS/Contact.css" />
   <script src="js/script.js" defer></script>
@@ -16,25 +16,24 @@
 
 <body id="body" class="light">
   <header>
-    <div class="colorMode">
+    <div id="theme">
       <img class="icon" id="imgColorMode" src="Ressources/icon/sun.png" alt="ColorMode" />
     </div>
     <nav class="menu list">
       <div id="nameH" class="sousMenu actifH">
-        <a onclick="display(Presentation)" href="#anchorPresentation">Enzo NOËL</a>
+        <a onclick="display(Homepage)" href="#Homepage">Enzo NOËL</a>
       </div>
       <div id="projectH" class="sousMenu">
-        <a onclick="display(Projects)" href="#anchorProjects">Projects</a>
+        <a onclick="display(Projects)" href="#Projects">Projects</a>
       </div>
       <div id="contactH" class="sousMenu">
-        <a onclick="display(Contact)" href="#anchorContact">Contact</a>
+        <a onclick="display(Contact)" href="#Contact">Contact</a>
       </div>
     </nav>
   </header>
   <main id="portfolio">
     <!-- Presentation -->
-    <span class="anchor" id="anchorPresentation"></span>
-    <div class="contenu actif" id="Presentation">
+    <div class="contenu actif" id="Homepage">
       <article id="EnzoNoel" class="presentation">
           <h1 id="name">
             ENZO
@@ -48,7 +47,7 @@
           </p>
       </article>
       <aside id="knowMe" class="presentation">
-          <a id="aboutMe" onclick="display(AboutMe)" href="#anchorAboutMe">About Me</a>
+          <a id="aboutMe" onclick="display(Presentation)" href="#Presentation">About Me</a>
           <ul class="list languages">
             <li id="html" class="language">
               <img class="icon" src="Ressources/icon/html-5.png" alt="html 5" />
@@ -68,8 +67,7 @@
       </aside>
     </div>
     <!-- SubPresentation -->
-    <span class="anchor" id="anchorAboutMe"></span>
-    <div class="contenu" id="AboutMe">
+    <div class="contenu" id="Presentation">
       <article>
         <img id="pp" src="Ressources/image/photoProfilLight.jpg" alt="moi" />
         <p>
@@ -82,52 +80,50 @@
       </article>
     </div>
     <!-- Projects -->
-    <span class="anchor" id="anchorProjects"></span>
     <div class="contenu" id="Projects">
       <div class="subProjectList">
         <div class="top">
           <div class="projects" id="WebProject">
-            <a id="linkWeb" class="titleProject" onclick="display(Web)" href="#anchorWeb">Web</a><a class="aImg"
-              onclick="display(Web)" href="#anchorWeb"><img class="imgProject" onmouseover="displaySelection(linkWeb)"
+            <a id="linkWeb" class="titleProject" onclick="display(Web)" href="#Web">Web</a><a class="aImg"
+              onclick="display(Web)" href="#Web"><img class="imgProject" onmouseover="displaySelection(linkWeb)"
                 onmouseout="hideSelection(linkWeb)" src="Ressources/image/web.jpg" alt="Web" /></a>
           </div>
           <div class="projects" id="LowatemProject">
-            <a id="linkLowatem" class="titleProject" onclick="display(Lowatem)" href="#anchorLowatem">Lowatem</a><a
-              class="aImg" onclick="display(Lowatem)" href="#anchorLowatem"><img class="imgProject"
+            <a id="linkLowatem" class="titleProject" onclick="display(Lowatem)" href="#Lowatem">Lowatem</a><a
+              class="aImg" onclick="display(Lowatem)" href="#Lowatem"><img class="imgProject"
                 onmouseover="displaySelection(linkLowatem)" onmouseout="hideSelection(linkLowatem)"
                 src="Ressources/image/java2.png" alt="Lowatem" /></a>
           </div>
           <div class="projects" id="PongProject">
-            <a id="linkPong" class="titleProject" onclick="display(Pong)" href="#anchorPong">Pong</a><a class="aImg"
-              onclick="display(Pong)" href="#anchorPong"><img class="imgProject"
+            <a id="linkPong" class="titleProject" onclick="display(Pong)" href="#Pong">Pong</a><a class="aImg"
+              onclick="display(Pong)" href="#Pong"><img class="imgProject"
                 onmouseover="displaySelection(linkPong)" onmouseout="hideSelection(linkPong)"
                 src="Ressources/image/Pong.png" alt="Pong" /></a>
           </div>
         </div>
         <div class="bot">
           <div class="projects" id="DataBaseProject">
-            <a id="linkDataBase" class="titleProject" onclick="display(DataBase)" href="#anchorDataBase">DataBase</a><a
-              class="aImg" onclick="display(DataBase)" href="#anchorDataBase"><img class="imgProject"
+            <a id="linkDataBase" class="titleProject" onclick="display(DataBase)" href="#DataBase">DataBase</a><a
+              class="aImg" onclick="display(DataBase)" href="#DataBase"><img class="imgProject"
                 onmouseover="displaySelection(linkDataBase)" onmouseout="hideSelection(linkDataBase)"
                 src="Ressources/image/database2.jpg" alt="DataBase" /></a>
           </div>
           <div class="projects" id="SystemProject">
-            <a id="linkSystem" class="titleProject" onclick="display(System)" href="#anchorSystem">System</a><a
-              class="aImg" onclick="display(System)" href="#anchorSystem"><img class="imgProject"
+            <a id="linkSystem" class="titleProject" onclick="display(System)" href="#System">System</a><a
+              class="aImg" onclick="display(System)" href="#System"><img class="imgProject"
                 onmouseover="displaySelection(linkSystem)" onmouseout="hideSelection(linkSystem)"
                 src="Ressources/image/System.jpg" alt="System" /></a>
           </div>
           <div class="projects" id="GestionProject">
-            <a id="linkGestion" class="titleProject" onclick="display(Gestion)" href="#anchorJpo">Management</a><a
+            <a id="linkGestion" class="titleProject" onclick="display(Gestion)" href="#Jpo">Management</a><a
               class="aImg" onclick="display(Gestion)" onmouseover="displaySelection(linkGestion)"
-              onmouseout="hideSelection(linkGestion)" href="#anchorGestion"><img class="imgProject"
+              onmouseout="hideSelection(linkGestion)" href="#Gestion"><img class="imgProject"
                 src="Ressources/image/gestion.jpg" alt="Gestion" /></a>
           </div>
         </div>
       </div>
     </div>
     <!-- SubProjects -->
-    <span class="anchor" id="anchorWeb"></span>
     <div class="contenu subProjects" id="Web">
       <img class="bgImg" src="Ressources/image/web.jpg" alt="webBg">
       <h1 id="web"> Web</h1>
@@ -137,7 +133,6 @@
       </p>
       <a class="pdf" href="Ressources/pdf/Web.pdf"><img class="icon" src="Ressources/icon/pdf.png" alt="webPdf"></a>
     </div>
-    <span class="anchor" id="anchorLowatem"></span>
     <div class="contenu subProjects" id="Lowatem">
       <img class="bgImg" src="Ressources/image/java2.png" alt="javaBg">
       <h1 id="lowatem"> Lowatem</h1>
@@ -148,7 +143,6 @@
       <a class="pdf" href="Ressources/pdf/Lowatem.pdf"><img class="icon" src="Ressources/icon/pdf.png"
           alt="lowatemPdf"></a>
     </div>
-    <span class="anchor" id="anchorPong"></span>
     <div class="contenu subProjects" id="Pong">
       <img class="bgImg" src="Ressources/image/Pong.png" alt="pongBg">
       <h1 id="pong"> Pong</h1>
@@ -158,7 +152,6 @@
       </p>
       <a class="pdf" href="Ressources/pdf/Pong.pdf"><img class="icon" src="Ressources/icon/pdf.png" alt="pongPdf"></a>
     </div>
-    <span class="anchor" id="anchorDataBase"></span>
     <div class="contenu subProjects" id="DataBase">
       <img class="bgImg" src="Ressources/image/database2.jpg" alt="databaseBg">
       <h1 id="database"> DataBase</h1>
@@ -169,7 +162,6 @@
       <a class="pdf" href="Ressources/pdf/DataBase.pdf"><img class="icon" src="Ressources/icon/pdf.png"
           alt="databasePdf"></a>
     </div>
-    <span class="anchor" id="anchorSystem"></span>
     <div class="contenu subProjects" id="System">
       <img class="bgImg" src="Ressources/image/System.jpg" alt="systemBg">
       <h1 id="system"> System</h1>
@@ -180,7 +172,6 @@
       <a class="pdf" href="Ressources/pdf/System.pdf"><img class="icon" src="Ressources/icon/pdf.png"
           alt="systemPdf"></a>
     </div>
-    <span class="anchor" id="anchorGestion"></span>
     <div class="contenu subProjects" id="Gestion">
       <img class="bgImg" src="Ressources/image/gestion.jpg" alt="gestionBg">
       <h1 id="gestion"> Management</h1>
@@ -191,7 +182,6 @@
           alt="gestionPdf"></a>
     </div>
     <!-- Contact -->
-    <span class="anchor" id="anchorContact"></span>
     <div class="contenu" id="Contact">
       <div>
         <ul id="contacts" class="list">

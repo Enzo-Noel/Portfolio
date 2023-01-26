@@ -7,6 +7,8 @@ header {
   min-height: 8vh;
   display: flex;
   animation: var(--translationYplus);
+  position: fixed;
+  z-index: 1;
 }
 
 header nav.menu {
@@ -27,6 +29,7 @@ header nav.menu ul {
 .menu {
   padding: 0;
   margin: 0;
+  min-height: 5vh;
 }
 
 .sousMenu {
@@ -47,7 +50,7 @@ header nav.menu ul {
   animation: var(--ColorAnimation);
 }
 
-.colorMode {
+#theme {
   position: absolute;
   left: 50%;
   top: 13vh;
@@ -69,7 +72,7 @@ header nav.menu ul {
     justify-content: end;
     align-items: center;
   }
-  .colorMode {
+  #theme {
     top: 19vh;
   }
 }
@@ -78,7 +81,7 @@ header nav.menu ul {
   header {
     min-height: 15vh;
   }
-  .colorMode {
+  #theme {
     top: 25vh;
   }
 }

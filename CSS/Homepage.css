@@ -127,22 +127,22 @@
     animation: var(--translationXminus);
   }
 }
-/* AboutMe */
+/* Presentation */
 
-#AboutMe article {
+#Presentation article {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#AboutMe p {
+#Presentation p {
   text-align: justify;
   width: 40%;
   font-size: x-large;
   animation: var(--translationXminus);
 }
 
-#AboutMe img {
+#Presentation img {
   border-radius: 25%;
   width: 25vw;
   min-width: 20rem;
@@ -151,14 +151,14 @@
 }
 
 @media screen and (max-width: 900px) {
-  #AboutMe article {
+  #Presentation article {
     flex-direction: column;
   }
-  #AboutMe img {
+  #Presentation img {
     min-width: 15rem !important;
     animation: var(--translationYplus);
   }
-  #AboutMe p {
+  #Presentation p {
     animation: var(--translationYminus);
     font-size: x-large;
     width: 75%;
@@ -166,19 +166,19 @@
 }
 
 @media screen and (max-width: 600px) {
-  #AboutMe p {
+  #Presentation p {
     font-size: large;
   }
 }
 
 @media screen and (max-width: 400px) {
-  #AboutMe p {
+  #Presentation p {
     font-size: larger;
   }
 }
 
 @media screen and (max-height: 700px) {
-  #AboutMe p {
+  #Presentation p {
     font-size: larger;
   }
 }

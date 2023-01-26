@@ -97,10 +97,10 @@ ul.list {
 
 /* Main */
 
-main .anchor {
-  position: absolute;
-  display: none;
+main {
+  position: fixed;
   top: 0;
+  width: 100%;
 }
 
 main .contenu {
@@ -112,7 +112,7 @@ main .contenu.actif {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  min-height: 92vh;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
 }
