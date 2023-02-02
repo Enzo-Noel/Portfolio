@@ -8,30 +8,11 @@ const Contact = document.getElementById("Contact");
 
 const Presentation = document.getElementById("Presentation");
 
-const Web = document.getElementById("Web");
-const Lowatem = document.getElementById("Lowatem");
-const Pong = document.getElementById("Pong");
-const DataBase = document.getElementById("DataBase");
-const System = document.getElementById("System");
-const Gestion = document.getElementById("Gestion");
-
 const NameHeader = document.getElementById("nameH");
 const ProjectsHeader = document.getElementById("projectH");
 const Contactheader = document.getElementById("contactH");
 
-const colors = document.getElementById("theme");
-const imgColorMode = document.getElementById("imgColorMode");
-const pp = document.getElementById("pp");
-const root = document.documentElement.style;
-const body = document.body;
-
-const lowatem = document.getElementById("lowatem");
-
-const imgProject = document.querySelector(".imgProject");
-
-var where;
-
-var wait = false;
+const imgProject = document.getElementsByClassName("imgProject");
 
 // Arrays
 
@@ -39,32 +20,49 @@ const containers = [Homepage, Presentation, Projects, Contact];
 
 const headers = [NameHeader, ProjectsHeader, Contactheader];
 
-const navs = [Homepage, Projects, Contact];
+// const navs = [Homepage, Projects, Contact];
 
 const valueHash = new Map();
 valueHash.set(0, "Homepage");
 valueHash.set(1, "Projects");
 valueHash.set(2, "Contact");
+valueHash.set(-1, "Presentation");
 
 // Run directly
 
-loadWhere();
+loadindexNav();
 
-colors.addEventListener("click", colorMode);
+window.addEventListener("hashchange", loadindexNav);
 
-window.addEventListener("wheel", mouvement);
+var wait = false;
+var timeOut;
+var indexNav;
+window.addEventListener("wheel", (event) => {
+  if (window.location.hash.substring(1) != "Presentation") {
+    if (!wait) {
+      if (event.deltaY < 0 && indexNav > 0) {
+        indexNav -= 1;
+      } else if (event.deltaY > 0 && indexNav < containers.length - 2) {
+        indexNav += 1;
+      }
+      window.location.hash = valueHash.get(indexNav);
+      wait = true;
+      loadindexNav();
+      timeOut = setTimeout(() => {
+        wait = false;
+      }, 725);
+    } else {
+      if (event.deltaY != 0 && event.deltaY != 100 && event.deltaY != -100) {
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => {
+          wait = false;
+        }, 500);
+      }
+    }
+  }
+});
 
-// Conditions
-
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  body.classList.replace("light", "dark");
-  colorModeSwitch();
-} else if (window.matchMedia("(prefers-color-scheme; light").matches) {
-  body.classList.replace("dark", "light");
-  colorModeSwitch();
-}
 // Functions
-
 function defaultText() {
   mail.textContent = "Email";
   mail.classList.remove("changeMail");
@@ -103,7 +101,6 @@ function removeActifAll() {
 function display(element) {
   removeActifAll();
   element.classList.add("actif");
-  where = navs.indexOf(element);
   hideAndSeek();
   // Header
   switch (element) {
@@ -120,95 +117,25 @@ function display(element) {
   }
 }
 
-function loadWhere() {
+function loadindexNav() {
   let anchor;
   valueHash.forEach((value, key) => {
     if (value == window.location.hash.substring(1)) {
       anchor = eval(window.location.hash.substring(1));
+      if (key == -1) {
+        indexNav = 0;
+      } else {
+        indexNav = key;
+      }
     }
   });
-  if (window.location.hash && !navs.includes(anchor)) {
+  if (window.location.hash && !containers.includes(anchor)) {
     window.location.href = "";
-  } else if (window.location.hash && navs.includes(anchor)) {
+  } else if (window.location.hash && containers.includes(anchor)) {
     display(anchor);
   } else {
     window.location.hash = "Homepage";
-    where = 0;
-  }
-}
-
-function mouvement(event) {
-  let timeOut;
-
-  if (window.location.hash.substring(1) != "Presentation") {
-    if (!wait) {
-      if (event.deltaY < 0 && where > 0) {
-        where -= 1;
-      } else if (event.deltaY > 0 && where < navs.length - 1) {
-        where += 1;
-      }
-      window.location.hash = valueHash.get(where);
-      loadWhere();
-      wait = true;
-      timeOut = setTimeout(() => {
-        wait = false;
-      }, 1000);
-    } else {
-      if (event.deltaY != 0) {
-        clearTimeout(timeOut);
-        timeOut = setTimeout(() => {
-          wait = false;
-        }, 500);
-      }
-    }
-  }
-}
-
-// ColorMode
-
-function dark() {
-  root.setProperty("--textColor", "#f1f1f1");
-  root.setProperty("--backgroundColor", "#001219");
-
-  root.setProperty("--colorAnimation1", "#fc618d");
-  root.setProperty("--colorAnimation2", "#5ad4e6");
-  root.setProperty("--colorAnimation3", "#7bd88f");
-  root.setProperty("--colorAnimation4", "#fce566");
-
-  root.setProperty("--colorUnderline", "#005f73");
-  imgColorMode.src = "Ressources/icon/moon.png";
-  pp.src = "Ressources/image/photoProfilDark.jpg";
-}
-
-function light() {
-  root.setProperty("--textColor", "#111111");
-  root.setProperty("--backgroundColor", "#f2e8cf");
-
-  root.setProperty("--colorAnimation1", "#d90429");
-  root.setProperty("--colorAnimation2", "#0a9396");
-  root.setProperty("--colorAnimation3", "#a7c957");
-  root.setProperty("--colorAnimation4", "#ff5400");
-
-  root.setProperty("--colorUnderline", "#9b2226");
-  imgColorMode.src = "Ressources/icon/sun.png";
-  pp.src = "Ressources/image/photoProfilLight.jpg";
-}
-
-function colorModeSwitch() {
-  if (body.classList.contains("dark")) {
-    dark();
-  } else if (body.classList.contains("light")) {
-    light();
-  }
-}
-
-function colorMode() {
-  if (body.classList.contains("dark")) {
-    body.classList.replace("dark", "light");
-    colorModeSwitch();
-  } else if (body.classList.contains("light")) {
-    body.classList.replace("light", "dark");
-    colorModeSwitch();
+    indexNav = 0;
   }
 }
 

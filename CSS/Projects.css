@@ -46,11 +46,13 @@ main .contenu#Projects {
   position: relative;
 }
 
-.subProjectList .select::before {
-  width: 100%;
+.subProjectList .select::before,
+.subProjectList .select::after {
+  width: 2rem;
 }
 
-.subProjectList .aImg::before {
+.subProjectList .aImg::before,
+.subProjectList .aImg::after {
   width: 0%;
 }
 

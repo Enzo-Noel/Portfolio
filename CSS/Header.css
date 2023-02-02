@@ -52,14 +52,27 @@ header nav.menu ul {
 
 #theme {
   position: absolute;
-  left: 50%;
-  top: 13vh;
+  left: 6%;
+  top: 6vh;
   transform: translate(-50%, -50%);
   display: flex;
 }
 
-#imgColorMode {
+#langue {
+  position: absolute;
+  left: 94%;
+  top: 6vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+#imgColorMode,
+#imgLangueMode {
   cursor: pointer;
+}
+
+#imgLangueMode {
+  height: 4rem;
 }
 
 @media screen and (max-width: 500px) {

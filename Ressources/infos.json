@@ -1,0 +1,28 @@
+{
+  "langue": [
+    {
+      "fr": {
+        "Headers": {
+          "Name": "Enzo NOËL",
+          "Projects": "Projets",
+          "Contact": "Contact"
+        },
+        "Homepage": "Etudiant en développement informatique",
+        "AboutMe": "Présentation",
+        "Description": "Né en 1998 à Orléans, je suis un étudiant en deuxième année à IUT de Bordeaux. Avant cela, j'ai étudié l'architecture pendant 2 ans. Finalement, j'ai choisi la voie de l'informatique, car c'est mon domaine de prédilection. Comme j'aime créer et concevoir, que ce soit de l'art ou des logiciels, la voie informatique est la meilleure pour moi."
+      }
+    },
+    {
+      "en": {
+        "Headers": {
+          "Name": "Enzo NOËL",
+          "Projects": "Projects",
+          "Contact": "Contact"
+        },
+        "Homepage": "French student developper",
+        "AboutMe": "About Me",
+        "Description": "Born in 1998 in Orléans, I am a French student based in Bordeaux now, currently in my second year. Before that, I studied architecture for 2 years. Finally, I chose the path of computer science, because it is my favorite field. As I like to create and design, be it art or software, the computer science path is the best for me."
+      }
+    }
+  ]
+}

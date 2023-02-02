@@ -11,59 +11,64 @@
   <link rel="stylesheet" href="CSS/Projects.css" />
   <link rel="stylesheet" href="CSS/Contact.css" />
   <script src="js/script.js" defer></script>
+  <script src="js/colorMode.js" defer></script>
+  <script src="js/languageMode.js" defer></script>
   <title>Enzo NOËl - Portfolio</title>
 </head>
 
-<body id="body" class="light">
+<body id="body" class="light en">
   <header>
     <div id="theme">
       <img class="icon" id="imgColorMode" src="Ressources/icon/sun.png" alt="ColorMode" />
     </div>
     <nav class="menu list">
       <div id="nameH" class="sousMenu actifH">
-        <a onclick="display(Homepage)" href="#Homepage">Enzo NOËL</a>
+        <a href="#Homepage">Enzo NOËL</a>
       </div>
       <div id="projectH" class="sousMenu">
-        <a onclick="display(Projects)" href="#Projects">Projects</a>
+        <a href="#Projects">Projects</a>
       </div>
       <div id="contactH" class="sousMenu">
-        <a onclick="display(Contact)" href="#Contact">Contact</a>
+        <a href="#Contact">Contact</a>
       </div>
     </nav>
+    <div id="langue">
+      <img class="icon" id="imgLangueMode" src="Ressources/icon/france.png" alt="LangueMode" />
+    </div>
   </header>
   <main id="portfolio">
     <!-- Presentation -->
     <div class="contenu actif" id="Homepage">
       <article id="EnzoNoel" class="presentation">
-          <h1 id="name">
-            ENZO
-            <br />
-            NOËL
-          </h1>
-          <p class="PColor">
-            French student
-            <br />
-            developer
-          </p>
+        <h1 id="name">
+          ENZO
+          <br />
+          NOËL
+        </h1>
+        <p class="PColor">
+          French student
+          <br />
+          developper
+        </p>
       </article>
       <aside id="knowMe" class="presentation">
-          <a id="aboutMe" onclick="display(Presentation)" href="#Presentation">About Me</a>
-          <ul class="list languages">
-            <li id="html" class="language">
-              <img class="icon" src="Ressources/icon/html-5.png" alt="html 5" />
-            </li>
-            <li id="css" class="language">
-              <img class="icon" src="Ressources/icon/css-3.png" alt="css 3" />
-            </li>
-            <li id="js" class="language">
-              <img class="icon" src="Ressources/icon/script-java.png" alt="JavaScript" />
-            </li>
-            <li id="java" class="language">
-              <img class="icon" src="Ressources/icon/java.png" alt="Java" />
-            </li>
-            <li id="csharp" class="language">
-              <img class="icon" src="Ressources/icon/c-sharp.png" alt="C-sharp" />
-            </li>
+        <a id="aboutMe" onclick="display(Presentation)" href="#Presentation">About Me</a>
+        <ul class="list languages">
+          <li id="html" class="language">
+            <img class="icon" src="Ressources/icon/html-5.png" alt="html 5" />
+          </li>
+          <li id="css" class="language">
+            <img class="icon" src="Ressources/icon/css-3.png" alt="css 3" />
+          </li>
+          <li id="js" class="language">
+            <img class="icon" src="Ressources/icon/script-java.png" alt="JavaScript" />
+          </li>
+          <li id="java" class="language">
+            <img class="icon" src="Ressources/icon/java.png" alt="Java" />
+          </li>
+          <li id="csharp" class="language">
+            <img class="icon" src="Ressources/icon/c-sharp.png" alt="C-sharp" />
+          </li>
       </aside>
     </div>
     <!-- SubPresentation -->
@@ -82,47 +87,21 @@
     <!-- Projects -->
     <div class="contenu" id="Projects">
       <div class="subProjectList">
-        <div class="top">
-          <div class="projects" id="WebProject">
-            <a id="linkWeb" class="titleProject" onclick="display(Web)" href="#Web">Web</a><a class="aImg"
-              onclick="display(Web)" href="#Web"><img class="imgProject" onmouseover="displaySelection(linkWeb)"
-                onmouseout="hideSelection(linkWeb)" src="Ressources/image/web.jpg" alt="Web" /></a>
-          </div>
-          <div class="projects" id="LowatemProject">
-            <a id="linkLowatem" class="titleProject" onclick="display(Lowatem)" href="#Lowatem">Lowatem</a><a
-              class="aImg" onclick="display(Lowatem)" href="#Lowatem"><img class="imgProject"
-                onmouseover="displaySelection(linkLowatem)" onmouseout="hideSelection(linkLowatem)"
-                src="Ressources/image/java2.png" alt="Lowatem" /></a>
-          </div>
-          <div class="projects" id="PongProject">
-            <a id="linkPong" class="titleProject" onclick="display(Pong)" href="#Pong">Pong</a><a class="aImg"
-              onclick="display(Pong)" href="#Pong"><img class="imgProject"
-                onmouseover="displaySelection(linkPong)" onmouseout="hideSelection(linkPong)"
-                src="Ressources/image/Pong.png" alt="Pong" /></a>
-          </div>
+        <div class="projects">
+          <a class="tilteProject" href="/design.html">Design</a>
+          <a class="aImg" href="/design.html"><img class="imgProject" src="Ressources/image/web.jpg"
+              alt="designImg"></a>
         </div>
-        <div class="bot">
+      </div>
+    </div>
+
+    <!-- <div class="bot">
           <div class="projects" id="DataBaseProject">
             <a id="linkDataBase" class="titleProject" onclick="display(DataBase)" href="#DataBase">DataBase</a><a
               class="aImg" onclick="display(DataBase)" href="#DataBase"><img class="imgProject"
                 onmouseover="displaySelection(linkDataBase)" onmouseout="hideSelection(linkDataBase)"
                 src="Ressources/image/database2.jpg" alt="DataBase" /></a>
-          </div>
-          <div class="projects" id="SystemProject">
-            <a id="linkSystem" class="titleProject" onclick="display(System)" href="#System">System</a><a
-              class="aImg" onclick="display(System)" href="#System"><img class="imgProject"
-                onmouseover="displaySelection(linkSystem)" onmouseout="hideSelection(linkSystem)"
-                src="Ressources/image/System.jpg" alt="System" /></a>
-          </div>
-          <div class="projects" id="GestionProject">
-            <a id="linkGestion" class="titleProject" onclick="display(Gestion)" href="#Jpo">Management</a><a
-              class="aImg" onclick="display(Gestion)" onmouseover="displaySelection(linkGestion)"
-              onmouseout="hideSelection(linkGestion)" href="#Gestion"><img class="imgProject"
-                src="Ressources/image/gestion.jpg" alt="Gestion" /></a>
-          </div>
-        </div>
-      </div>
-    </div>
+          </div> -->
     <!-- SubProjects -->
     <div class="contenu subProjects" id="Web">
       <img class="bgImg" src="Ressources/image/web.jpg" alt="webBg">
@@ -176,7 +155,8 @@
       <img class="bgImg" src="Ressources/image/gestion.jpg" alt="gestionBg">
       <h1 id="gestion"> Management</h1>
       <p>
-        In groups, we had to create a company, we had to do PESTEL analysis and how our company was going to be part of an ecological approach.
+        In groups, we had to create a company, we had to do PESTEL analysis and how our company was going to be part of
+        an ecological approach.
       </p>
       <a class="pdf" href="Ressources/pdf/Gestion.pdf"><img class="icon" src="Ressources/icon/pdf.png"
           alt="gestionPdf"></a>

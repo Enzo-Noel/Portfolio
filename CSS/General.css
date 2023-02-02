@@ -71,22 +71,27 @@ a {
   position: relative;
 }
 
-a::before {
+a::before,
+a::after {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
+  top: 50%;
+  left: -1.5rem;
   transform: translate(-50%, -50%);
-  height: 10%;
+  height: 20%;
   width: 0%;
   background-color: var(--colorUnderline);
   border-radius: 25px;
   transition: all 0.5s ease;
-  /* animation: var(--ColorAnimationBg); */
 }
 
-a:hover::before {
-  width: 100%;
+a::after {
+  left: calc(100% + 1.4rem);
+}
+
+a:hover::before,
+a:hover::after {
+  width: 2rem;
 }
 
 ul.list {
