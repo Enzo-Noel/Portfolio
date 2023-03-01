@@ -3,13 +3,11 @@ main .contenu#Projects {
   align-items: flex-start;
 }
 
-.subProjectList {
+.projectList {
   display: flex;
   align-items: center;
-  flex-direction: column;
   width: 100%;
   height: 100vh;
-  margin-top: 5vh;
 }
 
 .top,
@@ -29,7 +27,7 @@ main .contenu#Projects {
   margin-bottom: 3rem;
 }
 
-.subProjectList .titleProject {
+.projectList .titleProject {
   margin-bottom: 1rem;
 }
 
@@ -38,7 +36,7 @@ main .contenu#Projects {
   height: 15vw;
 }
 
-.subProjectList img {
+.projectList img {
   width: 25vw;
   max-width: 30rem;
   height: 15vw;
@@ -46,21 +44,29 @@ main .contenu#Projects {
   position: relative;
 }
 
-.subProjectList .select::before,
-.subProjectList .select::after {
+.projectList .select::before,
+.projectList .select::after {
   width: 2rem;
 }
 
-.subProjectList .aImg::before,
-.subProjectList .aImg::after {
+.projectList .aImg::before,
+.projectList .aImg::after {
   width: 0%;
 }
 
-.projects {
+.project {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#Design {
+  animation: var(--translationXplus);
+}
+
+#Development {
+  animation: var(--translationXminus);
 }
 
 #WebProject,
@@ -76,21 +82,11 @@ main .contenu#Projects {
   animation: var(--translationXminus);
 }
 
-.pdf::after {
-  content: "More about it";
-  width: 20rem;
-  text-align: center;
-  position: absolute;
-  transform: translate(-58%, -50%);
-  top: -2rem;
-  pointer-events: none;
-}
-
 @media screen and (max-width: 900px) {
   main .contenu#Projects {
     justify-content: flex-start;
   }
-  .subProjectList {
+  .projectList {
     margin-top: 8vh;
   }
   .top,
@@ -111,11 +107,11 @@ main .contenu#Projects {
     height: 0;
     width: 0;
   }
-  .projects {
+  .project {
     margin: 0;
     padding: 0;
   }
-  .subProjectList {
+  .projectList {
     height: 80vh;
   }
 }
